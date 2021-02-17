@@ -27,7 +27,6 @@ import reactPic from './../../assets/projectPics/react.png';
 import expressPic from './../../assets/projectPics/express.png';
 import mongoPic from './../../assets/projectPics/mongo.jpg';
 import firebasePic from './../../assets/projectPics/firebase.png';
-import linkedInPic from './../../assets/projectPics/In.png';
 import handlebarsPic from './../../assets/projectPics/handlebars.png';
 import bcryptPic from './../../assets/projectPics/bcrypt.jpg';
 
@@ -97,10 +96,6 @@ export const ProjectCarousel = props => {
         cssPic,
         htmlPic,
     ];
-    // GIF
-    // utilizes APIs
-    // good comments
-    // initial exploration of state
     let scrabbleTech = [
         jsPic,
         nodePic,
@@ -218,7 +213,7 @@ export const ProjectCarousel = props => {
                 <h1 className="section-title" >Projects I've Developed</h1>
             <Carousel className="carousel-slide">
                 {carouselItems.map(item => (
-                    <Carousel.Item key={item.title} interval={100000}>
+                    <Carousel.Item key={item.title} interval={15000}>
                         <Carousel_Slide
                             title={item.title}
                             text={item.text}

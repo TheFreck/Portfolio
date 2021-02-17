@@ -38,7 +38,7 @@ export const Education_Component = props => {
     // Work Experience
     // Titles
     // ********************************************
-    let workTitle = <h4><li>Work Experience</li></h4>
+    let workTitle = <h4 className="grid97"><li>Work Experience</li></h4>
     let fidelitySkillsTitle = <h6>Skills Used</h6>;
     let fidelityTimeTitle = <h6><strong>15 years experience</strong> in <br /> Financial Services and Investing</h6>;
     let fidelityTitle = <h5>Fidelity Investments</h5>;
@@ -82,16 +82,16 @@ export const Education_Component = props => {
 
     let clientSideContent = (<ul>
         <li>JavaScript</li>
+        <li>TypeScript</li>
         <li>JQuery</li>
         <li>Angular</li>
         <li>React</li>
         <li>Handlebars</li>
         <li>Liquid</li>
-        <li>Microsoft Portals
-                a web site rendering engine with back end connectors to D365</li>
+        <li>Microsoft Portals: a web site rendering engine with back end connectors to D365</li>
         <li>Microsoft PowerAutomate</li>
         <li>Microsoft PowerBI</li>
-    </ul>)
+    </ul>);
     let serverSideContent = (<ul>
         <li>C# and the dot net framework</li>
         <li>JavaScript using NodeJS</li>
@@ -99,8 +99,8 @@ export const Education_Component = props => {
     let pworxTimeContent = (<ul>
         <li>Customizing ERP/CRM software for businesses</li>
         <li>Based on Microsoft Dynamics 365</li>
-        <li>Integrating multiple systems for a seamless experience with robust data accessa</li>
-    </ul>)
+        <li>Integrating multiple systems for a seamless experience with robust data access</li>
+    </ul>);
     let pworxSkillsContent = (<ul>
         <li><AccordionComponent
             title={serverSideTitle}
@@ -110,7 +110,7 @@ export const Education_Component = props => {
             title={clientSideTitle}
             content={clientSideContent}
         /></li>
-    </ul>)
+    </ul>);
     let pworxContent = (<ul>
         <li><AccordionComponent
             title={pworxTimeTitle}
@@ -120,7 +120,7 @@ export const Education_Component = props => {
             title={pworxSkillsTitle}
             content={pworxSkillsContent}
         /></li>
-    </ul>)
+    </ul>);
 
     let workContent = (<ul>
         <li><AccordionComponent
@@ -133,6 +133,8 @@ export const Education_Component = props => {
         /></li>
     </ul>);
 
+    //console.log("***********************\nThe Education and Experience component uses an Accordion to simulate Outline Format\nin the future I may opt to reformat as a true accordion\n***********************")
+
     return (
         <div className="element-body">
             <h3 className="section-title">Education and Experience</h3>
@@ -142,6 +144,7 @@ export const Education_Component = props => {
                     content={workContent}
                     active={true}
                 />
+                <div className="between"></div>
                 <AccordionComponent
                     title={eduTitle}
                     content={eduContent}

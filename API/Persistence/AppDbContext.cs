@@ -29,7 +29,8 @@ namespace Portfolio.API.Persistence
                     Id = "1",
                     ReturnAddress = "there@here.com",
                     EmailBody = "This is an email to tell you that you are neat!"
-                } 
+                }
             );
+        }
     }
 }

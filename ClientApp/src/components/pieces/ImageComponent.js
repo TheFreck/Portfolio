@@ -15,14 +15,15 @@ import img11 from './../../assets/profilePics/IMG_11.jpg';
 import img12 from './../../assets/profilePics/IMG_12.jpg';
 import img13 from './../../assets/profilePics/IMG_13.jpg';
 import img14 from './../../assets/profilePics/IMG_14.jpg';
+import img15 from './../../assets/profilePics/IMG_15.jpg';
+import img16 from './../../assets/profilePics/IMG_16.jpg';
+import img17 from './../../assets/profilePics/IMG_17.jpg';
+import img18 from './../../assets/profilePics/IMG_18.jpg';
+import img19 from './../../assets/profilePics/IMG_19.jpg';
+import img20 from './../../assets/profilePics/IMG_20.jpg';
+import img21 from './../../assets/profilePics/IMG_21.jpg';
 
 const insideStyles = {
-    //background: "transparent",
-    //padding: 20,
-    //position: "absolute",
-    //top: "50%",
-    //left: "50%",
-    //transform: "translate(-50%,-50%)",
     display: "none",
     opacity: '0',
     visibility: "hidden",
@@ -43,25 +44,16 @@ export class ImageComponent extends Component {
             images: [],
             imagesUploaded: false,
             firstImage: null,
-            rowNumber: null
+            secondImage: null,
+            thirdImage: null,
+            ready: false,
+            rowNumber: 'portrait-row-' + this.props.id
         };
         this.componentDidMount = this.componentDidMount.bind(this);
     }
 
     componentDidMount() {
-        this.setState({
-            rowNumber: 'portrait-row-' + this.props.id
-        })
-        this.startRefresh();
-    }
-
-    startRefresh = () => {
-        setInterval(this.refresh(), 1000);
-    }
-
-    refresh = () => {
-        console.log("refresh");
-        let imageArray = [
+        let images = [
             img0,
             img1,
             img2,
@@ -76,87 +68,93 @@ export class ImageComponent extends Component {
             img11,
             img12,
             img13,
-            img14
-        ];
-        let firstImage = Math.floor(Math.random() * 15);
-        this.setState({ images: imageArray, imagesUploaded: true, firstImage });
+            img14,
+            img15,
+            img16,
+            img17,
+            img18,
+            img19,
+            img20,
+            img21
+        ]
+        this.setState({
+            images,
+            firstImage: images[Math.floor(Math.random() * 21)],
+            secondImage: images[Math.floor(Math.random() * 21)],
+            thirdImage: images[Math.floor(Math.random() * 21)],
+            ready: true
+        });
     }
 
     render = () => {
-        let image1 = this.state.firstImage ? this.state.firstImage : Math.floor(Math.random() * 15);
-        let image2;
-        do {
-            image2 = Math.floor(Math.random() * 15);
-        } while (image1 === image2);
-        let image3;
-        do {
-            image3 = Math.floor(Math.random() * 15);
-        } while (image2 === image3 || image1 === image3);
-        let imageArray = [
-            img0,
-            img1,
-            img2,
-            img3,
-            img4,
-            img5,
-            img6,
-            img7,
-            img8,
-            img9,
-            img10,
-            img11,
-            img12,
-            img13,
-            img14
-        ];
+        if (this.state.ready) {
+            let cls = {
+                name: "self ",
+                height: "parallax-px-height"
+            };
+            console.log("this.props.id: ", this.props.id);
+            console.log("cls: ", cls);
+            if (this.props.id == 5) {
+                cls.name += "bottom-self";
+                cls.height += "-bottom";
+                console.log("props id 5: ", cls.height);
+            }
+            else if (this.props.id == 3) {
+                cls.name += "project-self";
+                cls.height += "-project";
+                console.log("props id 3: ", cls.height);
+            }
+            else if(this.props.id == 1) {
+                cls.name += "top-self";
+                console.log("props id others: ", cls.height);
+            }
 
-        if (this.state.imagesUploaded) {
             return (
-                <div id={this.state.rowNumber}>
+                <div className="portrait-row" id={this.state.rowNumber}>
                     <Parallax
                         bgStyle="inner"
                         contentClassName="inner"
-                        className="self"
+                        className={cls.name}
                         blur={0}
-                        bgImage={imageArray[image1]}
+                        bgImage={this.state.firstImage}
                         bgImageAlt={'self portrait'}
-                        strength={250}
+                        strength={200}
                         renderLayer={percentage => (
                             <div>
                             </div>
                         )}
                     >
-                        <div style={{ height: 500 }}>
+                        <div className={cls.height}>
                         </div>
                     </Parallax>
                     <Parallax
-                        className="self"
+                        className={cls.name}
                         blur={0}
-                        bgImage={imageArray[image2]}
+                        bgImage={this.state.secondImage}
                         bgImageAlt={'self portrait'}
-                        strength={400}
+                        strength={300}
                         renderLayer={percentage => (
                             <div>
-                               
+
                             </div>
                         )}
                     >
-                        <div style={{ height: 500 }}>
+                        <div className={cls.height}>
                         </div>
                     </Parallax>
                     <Parallax
-                        className="self"
+                        className={cls.name}
                         blur={0}
-                        bgImage={imageArray[image3]}
+                        bgImage={this.state.thirdImage}
                         bgImageAlt={'self portrait'}
-                        strength={250}
+                        strength={200}
                         renderLayer={percentage => (
                             <div>
-                               
+
                             </div>
                         )}
                     >
-                        <div style={{ height: 500 }}>
+                        <div className={cls.height}>
                         </div>
                     </Parallax>
                 </div>
@@ -164,10 +162,10 @@ export class ImageComponent extends Component {
         }
         else {
             return (
-                    <div>
-                        <h1>Waiting...</h1>
-                    </div>
-            )
+                <div>
+                    <h1>Waiting...</h1>
+                </div>
+            );
         }
     }
 }

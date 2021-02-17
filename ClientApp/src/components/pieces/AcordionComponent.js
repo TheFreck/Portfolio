@@ -3,6 +3,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import upArrow from './../../assets/projectPics/upArrow.png';
 import downArrow from './../../assets/projectPics/downArrow.png';
+import $ from 'jquery';
 
 export class AccordionComponent extends Component {
     static displayName = AccordionComponent.name;
@@ -10,10 +11,9 @@ export class AccordionComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isOpen: false,
-            arrow: downArrow
+            isOpen: false
         };
-        this.componentDidMount = this.componentDidMount.bind(this);
+        //this.componentDidMount = this.componentDidMount.bind(this);
     }
 
     componentDidMount = () => {
@@ -21,7 +21,7 @@ export class AccordionComponent extends Component {
         if (this.props.active) {
             active.defaultActiveKey = "0";
             this.setState({
-                isOpen: true
+                isOpen: true,
             });
         };
     }
@@ -33,16 +33,22 @@ export class AccordionComponent extends Component {
     }
 
     render = () => {
-        let arrow = this.state.isOpen ? upArrow : downArrow;
         let active = {};
         if (this.props.active) active.defaultActiveKey = "0";
+        let isOpen = this.state.isOpen;
 
         return (
             <div>
-                <Accordion {...active} onSelect={this.handleSelect} >
+                <Accordion {...active} >
                     <Card>
                         <Accordion.Toggle as={Card.Header} eventKey="0">
-                            <div className="dropdown-header" >{this.props.title}<img className="dropdown-arrows" src={arrow} alt="up or down arrow" /></div>
+                            <div className={`panel-heading ${isOpen ? 'active' : ''}`} onClick={this.handleSelect} role="tab" >
+                                <h4 className="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        {this.props.title}
+                                    </a>
+                                </h4>
+                            </div>
                         </Accordion.Toggle>
                         <Accordion.Collapse eventKey="0">
                             <Card.Body>
