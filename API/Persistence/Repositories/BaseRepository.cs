@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Threading.Tasks;
 
-namespace Portfolio.API.Persistence.Repositories
-{
-    public abstract class BaseRepository
-    {
-        protected readonly AppDbContext _context;
+//namespace Portfolio.API.Persistence.Repositories
+//{
+//    public abstract class BaseRepository
+//    {
+//        protected readonly AppDbContext _context;
 
-        public BaseRepository(AppDbContext context)
-        {
-            _context = context;
-        }
-    }
-}
+//        public BaseRepository(AppDbContext context)
+//        {
+//            _context = context;
+//        }
+//    }
+//}

@@ -12,7 +12,7 @@ namespace Portfolio.API.Mapping
     {
         public ResourceToModelProfile()
         {
-            CreateMap<Email, EmailResource>();
+            CreateMap<object, MailArguments>();
         }
     }
 }

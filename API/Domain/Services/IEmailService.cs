@@ -9,6 +9,6 @@ namespace Portfolio.API.Domain.Services
 {
     interface IEmailService
     {
-        Task<Email> SendEmail();
+        Mail SendEmail();
     }
 }
