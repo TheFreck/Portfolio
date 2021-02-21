@@ -3,11 +3,12 @@ import AccordionComponent from './AcordionComponent';
 import EmailComponent from './EmailComponent';
 
 export const ContactInfo = props => {
-    //let emailForm = (<AccordionComponent
-    //    title={<h5>Click to Send Me an Email</h5>}
-    //    content={<EmailComponent />}
-    ///>)
-    let emailForm = <div></div>
+    let emailForm = (<AccordionComponent
+        title={<h5>Click to Send Me an Email</h5>}
+        content={<EmailComponent />}
+        className="email-form"
+    />)
+    //let emailForm = <div></div>
 
     return (
         <div className="element-body grid30">

@@ -11,6 +11,7 @@ import $ from 'jquery';
 import { ProgressBar, Glyphicon } from 'react-bootstrap';
 import Transition from './../pieces/Transition';
 import Credits from './../pieces/Credits';
+import EmailComponent from '../pieces/EmailComponent';
 
 export class Home extends Component {
     static displayName = Home.name;
@@ -49,7 +50,7 @@ export class Home extends Component {
     render = () => {
         //return (
         //    <div id="contentWrapper">
-        //        <Credits />
+        //        <EmailComponent />
         //    </div>
         //    )
 
