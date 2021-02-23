@@ -11,7 +11,7 @@ export const ContactInfo = props => {
     //let emailForm = <div></div>
 
     return (
-        <div className="element-body grid30">
+        <div className="element-body grid30 contact">
             <div className="contact-body-left">
                 <div className="contact-title">
                     <h3>Chris Freckleton</h3>

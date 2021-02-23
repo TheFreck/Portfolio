@@ -69,7 +69,7 @@ export class NavMenu extends Component {
                                 <a className="my-nav-link" href="#third-image">Contact Info</a><div className="spacer my-nav-link"> | </div>
                                 <a className="my-nav-link" href="#fifth-image">Education and Experience</a><div className="spacer my-nav-link"> | </div>
                                 <a className="my-nav-link" href="#seventh-image">Projects</a><div className="spacer my-nav-link"> | </div>
-                                <a className="my-nav-link" href="#tenth-credits">Credits</a>
+                                <a className="my-nav-link" href="#tenth-credits">About</a>
                             </ul>
                         </Collapse>
                     </Container>

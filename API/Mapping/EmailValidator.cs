@@ -7,11 +7,11 @@ using Portfolio.API.Domain.Models;
 
 namespace Portfolio.API.Mapping
 {
-    public class EmailToArguments : Profile
+    public class EmailValidator : Profile
     {
-        public EmailToArguments()
+        public EmailValidator()
         {
-            CreateMap<Email, MailArguments>();
+            CreateMap<Email, ValidEmail>();
         }
     }
 }

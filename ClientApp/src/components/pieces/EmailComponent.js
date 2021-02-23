@@ -13,27 +13,61 @@ export class EmailComponent extends Component {
             Subject: null,
             Body: null,
             Name: null,
-            Response: null
+
+            FromMessage: "Please include a valid email address",
+            SubjectMessage: "Would you like to include a subject line?",
+            BodyMessage: "Please make sure to include a body in your email",
+            NameMessage: "By what name can I call you?",
+            SubmitMessage:  "Email Successfully Sent",
+
+            FromDisplay: false,
+            SubjectDisplay: false,
+            BodyDisplay: false,
+            NameDisplay: false,
+            SubmitDisplay: false,
+
+            MessageSent: false,
         };
-        //this.componentDidMount = this.componentDidMount.bind(this);
     }
+
     handleSubmit = event => {
         event.preventDefault();
         let email = {
-            From: this.state.From,
-            Subject: this.state.Subject,
-            Body: this.state.Body,
-            Name: this.state.Name
-        };
+            From: "",
+            Subject: "",
+            Body: "",
+            Name: ""
+        }
+        let canSubmit = true;
+        // Form Validation
+        if (this.validateEmail(this.state.From)) email.From = this.state.From;
+        else {
+            // From email is manditory
+            canSubmit = false;
+            this.setState({ FromDisplay: true });
+        }
+        if (this.state.Subject) email.Subject = this.state.Subject;
+            // Subject is optional
+        else this.setState({ SubjectDisplay: true });
+        if (this.state.Body) email.Body = this.state.Body;
+        else {
+            // Body is manditory
+            canSubmit = false;
+            this.setState({ BodyDisplay: true });
+        }
+        if (this.state.Name) email.Name = this.state.Name;
+            // Name is optional
+        else this.setState({ NameDisplay: true });
+
+        if (!canSubmit) return;
 
         API.post(email).then(success => {
-            console.log("success: ", success);
+            console.log("success: ", success.data.reasonPhrase);
             this.setState({
-                Response: success.data,
-                From: "",
-                Body: "",
-                Name: "",
-                Subject: ""
+                SubmitMessage: success.data.reasonPhrase,
+                SubmitDisplay: true,
+                SubjectDisplay: false,
+                NameDisplay: false
             });
             this.handleReset();
         })
@@ -44,8 +78,6 @@ export class EmailComponent extends Component {
         const eventName = target.name;
         const value = target.value;
 
-        console.log(`target: ${target};\nname: ${eventName};\nvalue: ${value}`);
-
         this.setState({
             [eventName]: value
         });
@@ -53,29 +85,93 @@ export class EmailComponent extends Component {
     handleReset = () => {
         Array.from(document.querySelectorAll("input")).forEach(
             input => {
-                console.log("input: ", input);
                 (input.value = "")
             }
         );
         Array.from(document.querySelectorAll("textarea")).forEach(
             textarea => {
-                console.log("textarea: ", textarea);
                 (textarea.value = "")
             }
         );
         this.setState({
-            itemvalues: [{}]
+            itemvalues: [{}],
+            SubmitDisplay: true
         });
+        setTimeout(() => this.setState({ SubmitDisplay: false }), 3333);
     };
-    render() {
-        if (this.state.Response) {
+    handleBlur = event => {
+        event.preventDefault();
+        const target = event.target;
+        const eventName = target.name;
+        const value = target.value;
 
+        switch (eventName) {
+            case "From":
+                // validate email
+                if (!this.validateEmail(value)) {
+                    this.setState({
+                        FromDisplay: true
+                    });
+                }
+                else {
+                    this.setState({
+                        FromDisplay: false
+                    })
+                }
+                break;
+            case "Subject":
+                // if no subject ask if they wanna do a subject
+                if (!this.state.Subject) {
+                    this.setState({
+                        SubjectDisplay: true
+                    });
+                }
+                else {
+                    this.setState({
+                        SubjectDisplay: false
+                    });
+                }
+                break;
+            case "Body":
+                // make sure there's a body
+                if (!this.state.Body) {
+                    this.setState({
+                        BodyDisplay: true
+                    });
+                }
+                else {
+                    this.setState({
+                        BodyDisplay: false
+                    });
+                }
+                break;
+            case "Name":
+                // make sure there's a name
+                if (!this.state.Name) {
+                    this.setState({
+                        NameDisplay: true
+                    });
+                }
+                else {
+                    this.setState({
+                        NameDisplay: false
+                    });
+                }
+            default:
+            // don't do anything
         }
+    };
+    validateEmail = email => {
+        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+
+    render() {
         return (
             <div>
                 <InputGroup className="mb-3">
                     <InputGroup.Prepend>
-                        <InputGroup.Text id="returnEmail">Return Email Address: </InputGroup.Text>
+                        <InputGroup.Text id="returnEmail">Your Email: </InputGroup.Text>
                     </InputGroup.Prepend>
                     <Form.Control
                         placeholder="Your Return Email Address @ Sumpin Dot Sumpin Else"
@@ -83,8 +179,10 @@ export class EmailComponent extends Component {
                         aria-describedby="returnEmail"
                         onChange={this.handleChange}
                         name="From"
+                        onBlur={this.handleBlur}
                     />
                 </InputGroup>
+                <p className={this.state.FromDisplay ? 'show from-message' : 'hide from-message'}>{this.state.FromMessage}</p>
 
                 <InputGroup className="mb-3">
                     <InputGroup.Prepend>
@@ -96,8 +194,10 @@ export class EmailComponent extends Component {
                         aria-describedby="emailSubject"
                         onChange={this.handleChange}
                         name="Subject"
+                        onBlur={this.handleBlur}
                     />
                 </InputGroup>
+                <p className={this.state.SubjectDisplay ? 'show subject-message' : 'hide subject-message'}>{this.state.SubjectMessage}</p>
 
                 <InputGroup className="mb-3">
                     <InputGroup.Prepend>
@@ -110,8 +210,10 @@ export class EmailComponent extends Component {
                         onChange={this.handleChange}
                         name="Body"
                         as="textarea"
+                        onBlur={this.handleBlur}
                     />
                 </InputGroup>
+                <p className={this.state.BodyDisplay ? 'show body-message' : 'hide body-message'}>{this.state.BodyMessage}</p>
 
                 <InputGroup className="mb-3">
                     <InputGroup.Prepend>
@@ -123,9 +225,13 @@ export class EmailComponent extends Component {
                         aria-describedby="name"
                         onChange={this.handleChange}
                         name="Name"
+                        onBlur={this.handleBlur}
                     />
                 </InputGroup>
+                <p className={this.state.NameDisplay ? 'show name-message' : 'hide name-message'}>{this.state.NameMessage}</p>
+
                 <button id="submit" onClick={this.handleSubmit}>Submit</button>
+                <p className={this.state.SubmitDisplay ? 'show submit-message' : 'hide submit-message'}>{this.state.SubmitMessage}</p>
             </div>
         );
     }

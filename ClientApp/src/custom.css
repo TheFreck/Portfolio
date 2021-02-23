@@ -162,11 +162,9 @@ code {
 }
 
 .credits-tech-icon{
-    width: auto;
     height: 15vh;
     margin: .5vw;
-    display: block;
-    position: relative;
+    display: inline-block;
 }
 
 .credits-text{
@@ -182,7 +180,6 @@ code {
 }
 
 .credits-tech-icon-list {
-    display: flex;
     margin-bottom: 6vh;
 }
 
@@ -419,7 +416,37 @@ ul{
 #eighth-projects{
 }
 
+.show{
+    display: block;
+}
 
+.hide{
+    display: none;
+}
+
+.subject-message,
+.name-message {
+    color: rgb(207, 170, 0);
+    font-weight: 600;
+    margin-left: .5vw;
+}
+
+.from-message,
+.body-message {
+    color: red;
+    font-weight: 600;
+    margin-left: .5vw;
+}
+
+.submit-message{
+    color: green;
+    font-weight: 700;
+}
+
+#submit:active{
+    background: gray;
+    color: white;
+}
 
 @media only screen and (max-width: 994px) {
     .section-title {
@@ -450,5 +477,25 @@ ul{
 
     .edu-body {
         display: inline-block;
+    }
+
+    .credits-tech-txt{
+        font-size: 1em;
+    }
+
+    .credits-tech-icon{
+        height: 7vh;
+    }
+
+    .contact{
+        display: inline-block;
+    }
+
+    .panel-title {
+        padding: 0;
+    }
+
+    .card-header{
+        padding: 0;
     }
 }
