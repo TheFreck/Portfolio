@@ -6,6 +6,7 @@ import jqueryPic from './../../assets/projectPics/jquery.png';
 import jsPic from './../../assets/projectPics/js.png';
 import azurePic from './../../assets/projectPics/Azure.png';
 import reactPic from './../../assets/projectPics/react.png';
+import dotNetPic from './../../assets/projectPics/AspNetMVC.jpg';
 
 export const Credits = props => {
     let tech = [
@@ -23,6 +24,11 @@ export const Credits = props => {
             alt: "jQuery logo",
             src: jqueryPic,
             txt: "JQuery"
+        },
+        {
+            alt: "Asp.Net MVC logo",
+            src: dotNetPic,
+            txt: "Asp.NET MVC"
         },
         {
             alt: "html logo",
@@ -45,7 +51,7 @@ export const Credits = props => {
             txt: "Hosted by Azure"
         },
     ]
-    const text = <><p className="credits-text">This site was built from the ground up using C# in the .AspNetCore framework and rendered in React. Components like the Accordion, Carousel, Parallax and Progress Bar were modified from the React-Bootstrap. Styling was for the most part handled in plain old CSS (to the extent allowed by the particular component in some cases).</p><br /><p className="credits-text">The image panels dyamically generate from three images picked at random and as a result will be different each time.</p><br /><p className="credits-text">The email component does some verification in the client. An email address and text body are required but it will warn if there is no subject or a name. After validating a POST request is made where the server uses a regular expression to validate email syntax and sends it out. The email is configured so that it arrives in my inbox and replies are sent to the email address included.</p><br /><p className="credits-text">Please reach out if you have any interesting projects you'd like to colab on</p><br /><p className="credits-text">The code for this project is at <a href="https://github.com/TheFreck/Portfolio" target="_blank">Github.com</a></p></>;
+    const text = <><p className="credits-text">This site was built from the ground up using C# in the .AspNetCore framework and rendered in React. Components like the Accordion, Carousel, Parallax and Progress Bar were modified from the React-Bootstrap. Styling was for the most part handled in plain old CSS (to the extent allowed by the particular component in some cases).</p><br /><p className="credits-text">The image panels dyamically generate from three images picked at random and as a result will be different each time. Clicking on an image will cause it to transform with each click into its negative. Continuing to click it will eventualy get back to the original.</p><br /><p className="credits-text">The email component does some verification in the client. An email address and text body are required but it will warn if there is no subject or a name. After validating a POST request is made where the server uses a regular expression to validate email syntax and sends it out. The email is configured so that it arrives in my inbox and replies are sent to the email address included.</p><br /><p className="credits-text">Please reach out if you have any interesting projects you'd like to colab on</p><br /><p className="credits-text">The code for this project is at <a href="https://github.com/TheFreck/Portfolio" target="_blank">Github.com</a></p></>;
     
     return (
         <div className="element-body">

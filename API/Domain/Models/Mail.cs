@@ -21,13 +21,6 @@ namespace Portfolio.API.Domain.Models
                 var isSent = false;
                 using (var client = new SmtpClient())
                 {
-                    client.MessageSent += (sender, args) => {
-                        Console.WriteLine("sender then args");
-                        Console.WriteLine(sender);
-                        Console.WriteLine(args.Response);
-                        Console.WriteLine(args.Message);
-                    };
-
                     client.ServerCertificateValidationCallback = (s, c, h, e) => true;
 
                     await client.ConnectAsync("smtp.gmail.com", 587, SecureSocketOptions.StartTls);

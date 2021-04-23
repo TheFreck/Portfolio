@@ -31,17 +31,6 @@ code {
     bottom: 0;
 }
 
-.selfRow {
-    margin: 0;
-    padding: 0;
-    width: 99%;
-    overflow: hidden;
-    height: 40vh;
-    top: 0;
-    z-index: 10;
-    box-shadow: 5px 5px 20px 5px rgb(241, 241, 241), -5px -5px 20px 5px rgb(241, 241, 241);
-}
-
 .outer-border {
     background: rgb(241, 241, 241);
     height: auto;
@@ -255,7 +244,32 @@ code {
 
 .portrait-row {
     width: 99%;
+
 }
+/*.portrait-wash-green:hover{
+    background: green !important;
+    opacity: .9;
+}
+.portrait-wash-red:hover {
+    background: red !important;
+    opacity: .9;
+}
+.portrait-wash-yellow:hover {
+    background: yellow !important;
+    opacity: .9;
+}
+.portrait-wash-orange:hover {
+    background: orange !important;
+    opacity: .9;
+}
+.portrait-wash-blue:hover {
+    background: blue !important;
+    opacity: .9;
+}
+.portrait-wash-purple:hover{
+    background: purple !important;
+    opacity: .9;
+}*/
 
 #statement-text {
     font-size: 1.2em;
@@ -301,16 +315,25 @@ code {
     color: rgb(135,135,135);
 }
 
-.parallax-px-height {
+.parallax-px-height-tall {
     height: 500px;
 }
-
-.parallax-px-height-bottom{
-    height: 150px;
+.parallax-px-height-short{
+    height: 250px;
 }
 
-.parallax-px-height-project {
+.parallax-px-height-bottom-tall{
+    height: 150px;
+}
+.parallax-px-height-bottom-short{
+    height: 50px;
+}
+
+.parallax-px-height-project-tall{
     height: 200px;
+}
+.parallax-px-height-project-short{
+    height:100px;
 }
 
 .example-fade-text{
@@ -422,6 +445,73 @@ ul{
 
 .hide{
     display: none;
+}
+
+.flip0{
+    filter: invert(0);
+}
+.flip1{
+    filter: invert(.1);
+}
+.flip2{
+    filter: invert(.2);
+}
+.flip3{
+    filter: invert(.3);
+}
+.flip4{
+    filter: invert(.4);
+}
+.flip5{
+    filter: invert(.5);
+}
+.flip5-3{
+    filter: invert(.53);
+}
+.flip6 {
+    filter: invert(.6);
+}
+.flip7 {
+    filter: invert(.7);
+}
+.flip8 {
+    filter: invert(.8);
+}
+.flip9 {
+    filter: invert(.9);
+}
+.flip10 {
+    filter: invert(1);
+}
+.flip-10 {
+    filter: invert(1);
+}
+.flip-9 {
+    filter: invert(.9);
+}
+.flip-8 {
+    filter: invert(.8);
+}
+.flip-7 {
+    filter: invert(.7);
+}
+.flip-6 {
+    filter: invert(.6);
+}
+.flip-5 {
+    filter: invert(.5);
+}
+.flip-4 {
+    filter: invert(.4);
+}
+.flip-3 {
+    filter: invert(.3);
+}
+.flip-2 {
+    filter: invert(.2);
+}
+.flip-1 {
+    filter: invert(.1);
 }
 
 .subject-message,

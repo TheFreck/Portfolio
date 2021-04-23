@@ -43,17 +43,25 @@ export class ImageComponent extends Component {
         this.state = {
             images: [],
             imagesUploaded: false,
-            firstImage: null,
-            secondImage: null,
-            thirdImage: null,
+            Image1: null,
+            Image2: null,
+            Image3: null,
             ready: false,
-            rowNumber: 'portrait-row-' + this.props.id
+            rowNumber: 'portrait-row-' + this.props.id,
+            class1: false,
+            class2: false,
+            class3: false,
+            colorclass1: Math.floor(Math.random() * 7),
+            colorclass2: Math.floor(Math.random() * 7),
+            colorclass3: Math.floor(Math.random() * 7),
+            short: false
         };
         this.componentDidMount = this.componentDidMount.bind(this);
+        this.handleOnClick = this.handleOnClick.bind(this);
     }
 
     componentDidMount() {
-        let images = [
+        const images = [
             img0,
             img1,
             img2,
@@ -79,85 +87,128 @@ export class ImageComponent extends Component {
         ]
         this.setState({
             images,
-            firstImage: images[Math.floor(Math.random() * 21)],
-            secondImage: images[Math.floor(Math.random() * 21)],
-            thirdImage: images[Math.floor(Math.random() * 21)],
+            Image1: images[Math.floor(Math.random() * 21)],
+            Image2: images[Math.floor(Math.random() * 21)],
+            Image3: images[Math.floor(Math.random() * 21)],
             ready: true
         });
     }
 
+    handleOnClick = async event => {
+        event.preventDefault();
+        const target = event.target;
+        const eventName = target.className.split(' ')[1];
+        let eventColor = "color" + eventName;
+        let eventColorValue = this.state[eventColor] < 6 ? this.state[eventColor] + 1 : 0;
+        await this.setState({
+            [eventName]: !this.state[eventName],
+            [eventColor]: eventColorValue,
+        })
+        this.checkShort();
+    }
+
+    checkShort = () => {
+        if (this.state.class1 &&
+            this.state.class2 &&
+            this.state.class3) {
+            //this.state.colorclass1 == this.state.colorclass2 &&
+            //this.state.colorclass2 == this.state.colorclass3) {
+            this.setState({ short: true });
+        }
+        else {
+            this.setState({ short: false });
+        }
+    }
+
     render = () => {
+        //debugger;
+        // account for differences in heights of each image panel
         if (this.state.ready) {
+            let tail = this.state.short ? "-short" : "-tall";
             let cls = {
-                name: "self ",
+                name: " self ",
                 height: "parallax-px-height"
             };
-            console.log("this.props.id: ", this.props.id);
-            console.log("cls: ", cls);
             if (this.props.id == 5) {
-                cls.name += "bottom-self";
-                cls.height += "-bottom";
-                console.log("props id 5: ", cls.height);
+                cls.name += " bottom-self";
+                cls.height += "-bottom" + tail;
             }
             else if (this.props.id == 3) {
-                cls.name += "project-self";
-                cls.height += "-project";
-                console.log("props id 3: ", cls.height);
+                cls.name += " project-self";
+                cls.height += "-project" + tail;
             }
-            else if(this.props.id == 1) {
-                cls.name += "top-self";
-                console.log("props id others: ", cls.height);
+            else if (!this.props.id) {
+                console.log("top self");
+                cls.name += " top-self";
+                cls.height += tail;
             }
+            else {
+                cls.height += tail;
+            }
+            const colors = [
+                "red",
+                "green",
+                "blue",
+                "yellow",
+                "orange",
+                "purple",
+                "brown"
+            ];
+
+            console.log(`height: ${cls.height}; row: ${this.props.id}`);
 
             return (
                 <div className="portrait-row" id={this.state.rowNumber}>
-                    <Parallax
-                        bgStyle="inner"
-                        contentClassName="inner"
-                        className={cls.name}
-                        blur={0}
-                        bgImage={this.state.firstImage}
-                        bgImageAlt={'self portrait'}
-                        strength={200}
-                        renderLayer={percentage => (
-                            <div>
+                    <div className={cls.name + " portrait-wash-" + colors[this.state.colorclass1]}>
+                        <Parallax
+                            className={this.state.class1 ? " flip5-3 portrait-wash-" + colors[this.state.colorclass1] : " flip0 portrait-wash-" + colors[this.state.colorclass1]}
+                            blur={0}
+                            bgImage={this.state.Image1}
+                            bgImageAlt={'self portrait'}
+                            strength={200}
+                            name="class1"
+                            renderLayer={percentage => (
+                                <div name="class1">
+                                </div>
+                            )}
+                        >
+                            <div className={cls.height + " class1"} onClick={this.handleOnClick}>
                             </div>
-                        )}
-                    >
-                        <div className={cls.height}>
-                        </div>
-                    </Parallax>
-                    <Parallax
-                        className={cls.name}
-                        blur={0}
-                        bgImage={this.state.secondImage}
-                        bgImageAlt={'self portrait'}
-                        strength={300}
-                        renderLayer={percentage => (
-                            <div>
-
+                        </Parallax>
+                    </div>
+                    <div className={cls.name + " portrait-wash-" + colors[this.state.colorclass2]}>
+                        <Parallax
+                            className={this.state.class2 ? " flip5-3 portrait-wash-" + colors[this.state.colorclass2] : " flip0 portrait-wash-" + colors[this.state.colorclass2]}
+                            blur={0}
+                            bgImage={this.state.Image2}
+                            bgImageAlt={'self portrait'}
+                            strength={300}
+                            renderLayer={percentage => (
+                                <div>
+                                </div>
+                            )}
+                        >
+                            <div className={cls.height + " class2"} onClick={this.handleOnClick}>
                             </div>
-                        )}
-                    >
-                        <div className={cls.height}>
-                        </div>
-                    </Parallax>
-                    <Parallax
-                        className={cls.name}
-                        blur={0}
-                        bgImage={this.state.thirdImage}
-                        bgImageAlt={'self portrait'}
-                        strength={200}
-                        renderLayer={percentage => (
-                            <div>
-
+                        </Parallax>
+                    </div>
+                    <div className={cls.name + " portrait-wash-" + colors[this.state.colorclass3]}>
+                        <Parallax
+                            className={this.state.class3 ? " flip5-3 portrait-wash-" + colors[this.state.colorclass3] : " flip0 portrait-wash-" + colors[this.state.colorclass3]}
+                            blur={0}
+                            bgImage={this.state.Image3}
+                            bgImageAlt={'self portrait'}
+                            strength={200}
+                            renderLayer={percentage => (
+                                <div>
+                                </div>
+                            )}
+                        >
+                            <div className={cls.height + " class3"} onClick={this.handleOnClick}>
                             </div>
-                        )}
-                    >
-                        <div className={cls.height}>
-                        </div>
-                    </Parallax>
-                </div>
+                        </Parallax>
+                    </div>
+                </div >
             );
         }
         else {

@@ -7,7 +7,6 @@ using System.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-//using System.Net.Mail;
 using System.Net.Mime;
 using System.Threading.Tasks;
 using MailKit.Net.Smtp;
@@ -33,8 +32,7 @@ namespace Portfolio.API.Controllers
         [HttpPost]
         public HttpResponseMessage SendEmail([FromBody] Email email)
         {
-            var emailIsValid = Regex.IsMatch(email.From,
-        @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
+            var emailIsValid = Regex.IsMatch(email.From, @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
             if (!emailIsValid)
             {
                 return new HttpResponseMessage
