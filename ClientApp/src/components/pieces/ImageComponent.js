@@ -155,7 +155,7 @@ export class ImageComponent extends Component {
                 "brown"
             ];
 
-            console.log(`height: ${cls.height}; row: ${this.props.id}`);
+            //console.log(`height: ${cls.height}; row: ${this.props.id}`);
 
             return (
                 <div className="portrait-row" id={this.state.rowNumber}>
