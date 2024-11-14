@@ -1,5 +1,5 @@
 # About This Page
-This site was built from the ground up using **C#** in the **.AspNetCore** framework and rendered in **React**. Components like the Accordion, Carousel, Parallax and Progress Bar were modified from the **React-Bootstrap**. Styling was for the most part handled in plain old **CSS** (to the extent allowed by the particular component in some cases).
+This site was built from the ground up in **React**. Components like the Accordion, Carousel, Parallax and Progress Bar were modified from the **React-Bootstrap**. Styling was for the most part handled in plain old **CSS** (to the extent allowed by the particular component in some cases).
 
 
 **The image panels** dyamically generate from three images picked at random and as a result will be different each time.
