@@ -4,7 +4,7 @@ import react from "react";
 export const Projects = () => {
 
     return <Paper>
-        Projects
+        Projects will appear here
     </Paper>
 }
 
