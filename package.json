@@ -1,6 +1,6 @@
 {
   "homepage": "https://thefreck.github.io/Portfolio/",
-  "name": "Portfolio",
+  "name": "portfolio",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
