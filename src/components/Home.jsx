@@ -7,7 +7,7 @@ export const Home = () => {
         <Typography
             variant="h3"
         >
-            This is where it starts
+            This page is currently under construction. 
         </Typography>
     </Paper>
 }
