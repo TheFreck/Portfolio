@@ -63,7 +63,7 @@ export const Layout = () => {
                         <Typography
                             onClick={() => setView(viewEnum.endorsements)}
                         >
-                            Endorsementss
+                            Endorsements
                         </Typography>
                     </Grid2>
                 </Grid2>
