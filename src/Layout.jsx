@@ -20,7 +20,7 @@ export const Layout = () => {
     return <Box data-name="box" sx={{flexGrow:1, margin: 0, padding: 0, height: "100vh", width: "100vw"}}>
         <AppBar 
             position="sticky"
-            sx={{width: "100vw", margin: 0, padding: 0, height: "20%", background: "#adadad"}}
+            sx={{width: "100vw", margin: 0, padding: 0, height: "20% !important", background: "#adadad"}}
             data-name="appbar"
         >
             <Toolbar variant="dense" data-name="toolbar" 
