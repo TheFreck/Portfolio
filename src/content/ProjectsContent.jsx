@@ -7,7 +7,7 @@ import LoopImg from "../assets/profileImages/Loop.png";
 import circleInversion from "../assets/profileImages/circleInversion.png";
 import fourier from "../assets/profileImages/fourier.jpg";
 import primesGif from "../assets/profileImages/primes.gif";
-import X5wP from "../projectInterfaces/x5wp";
+import X5wP from "../projectInterfaces/X5wP";
 import Life from "../projectInterfaces/Life";
 import GameLoop from "../projectInterfaces/GameLoop";
 import CircleInversion from "../projectInterfaces/CircleInversion";
