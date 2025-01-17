@@ -41,21 +41,21 @@ export const Layout = () => {
                     <Grid2 size={2}>
                         <Typography
                             onClick={() => setView(viewEnum.about)}
-                            >
+                        >
                             About Me
                         </Typography>
                     </Grid2>
                     <Grid2 size={2}>
                         <Typography
                             onClick={() => setView(viewEnum.projects)}
-                            >
+                        >
                             Projects
                         </Typography>
                     </Grid2>
                     <Grid2>
                         <Typography
                             onClick={() => setView(viewEnum.books)}
-                            >
+                        >
                             Reading List
                         </Typography>
                     </Grid2>

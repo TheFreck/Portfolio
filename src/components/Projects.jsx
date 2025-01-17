@@ -1,37 +1,69 @@
-import { Box, Fab, Grid2, Modal, Paper } from "@mui/material";
+import { Box, Button, Grid2, IconButton, ImageList, ImageListItem, ImageListItemBar, Modal, Paper } from "@mui/material";
 import react, { useRef, useState } from "react";
 import Primes from "../projectInterfaces/Primes";
 import CloseIcon from '@mui/icons-material/Close';
+import projects from "../content/ProjectsContent";
+import InfoIcon from '@mui/icons-material/Info';
 
 export const Projects = () => {
     const [open,setOpen] = useState(false);
-    const [current,setCurrent] = useState(<div/>);
+    const [current,setCurrent] = useState(<Primes />);
     const modalRef = useRef();
 
-    return <Paper>
-        Projects will appear here
-        <ul>
-            <li>X5wPrint</li>
-            <li>TheFreck Exchange</li>
-            <li>Game of Life</li>
-            <li>React Game Loop</li>
-            <li>Fourier Fun</li>
-            <li>Circle Inversion</li>
-            <li>Bishop Problem</li>
-            <li>Secret Code using Playing Cards</li>
-            <li>Simple Assembly Interpreter</li>
-            <li onClick={() => {
-                setCurrent(<Primes />);
-                setOpen(!open);
-            }}>Prime Number Generator</li>
-            <li>Find the total area covered by rectangles</li>
-            <li>Finding Integer Partitions</li>
-            <li>Parsing and evaluating Mathematical Expressions</li>
-            <li>Binary Multiples using Regex</li>
-            <li>Binomial Expansion</li>
-            <li>Linear Systems of Equations</li>
-            <li>Bubble Trader</li>
-        </ul>
+    return <Box
+        sx={{
+            width: "60vw",
+            margin: "auto",
+            overflowY: "auto",
+            minHeight: "90vh"
+        }}
+    >
+    <Button
+        onClick={() => setOpen(true)}
+    >
+        Primes
+    </Button>
+        <ImageList
+            cols={3}
+            gap={8}
+            variant="masonry"
+        >
+            {
+                projects && projects.map((p,i) => (
+                    <ImageListItem 
+                        key={i}
+                        cols={p.project.cols} 
+                        rows={p.project.rows}
+                    >
+                        <img
+                            srcSet={p.project.img}
+                            src={p.project.img}
+                            alt={p.project.title}
+                            loading="lazy"
+                        />
+                        <ImageListItemBar 
+                            title={p.title}
+                            subtitle={p.title}
+                            sx={{
+                                cursor: "pointer"
+                            }}
+                            onClick={() => {
+                                console.log("icon: ", p.title);
+                                setCurrent(p.project.link)
+                                setOpen(true);
+                            }}
+                            actionIcon={
+                                <IconButton
+                                >
+                                    <InfoIcon />
+                                </IconButton>
+                            }
+                        >
+                        </ImageListItemBar>
+                    </ImageListItem>
+                ))
+            }
+        </ImageList>
         <Modal
             open={open}
             onClose={() => setOpen(false)}
@@ -66,7 +98,7 @@ export const Projects = () => {
                 </Grid2>
             </Box>
         </Modal>
-    </Paper>
+    </Box>
 }
 
 export default Projects;

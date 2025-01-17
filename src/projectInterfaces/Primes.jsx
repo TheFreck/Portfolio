@@ -289,9 +289,11 @@ export const Primes = () => {
             </Typography>
             <Typography
                 variant="h5"
-            >
+                >
+                <hr/>
                 This project will calculate prime numbers using the Atkin Sieve. The first number is the lowest number that will be considered while the second number determines how many prime integers to be returned.
             </Typography>
+            <br/>
         </Grid2>
         <Grid2 
             container
@@ -345,7 +347,7 @@ export const Primes = () => {
             container
             sx={{
                 overflowY: "auto",
-                height: "50vh"
+                height: "45vh"
             }}
         >
             <PrimesArrayCallback />

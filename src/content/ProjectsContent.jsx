@@ -1,179 +1,164 @@
 import { Typography } from "@mui/material";
 import Primes from "../projectInterfaces/Primes";
+import x5wP from "../assets/profileImages/x5wP.png";
+import bowler from "../assets/profileImages/bowler.jpg";
+import lifeGif from "../assets/profileImages/life.gif";
+import LoopImg from "../assets/profileImages/Loop.png";
+import circleInversion from "../assets/profileImages/circleInversion.png";
+import fourier from "../assets/profileImages/fourier.jpg";
+import primesGif from "../assets/profileImages/primes.gif";
+import X5wP from "../projectInterfaces/x5wp";
+import Life from "../projectInterfaces/Life";
+import GameLoop from "../projectInterfaces/GameLoop";
+import CircleInversion from "../projectInterfaces/CircleInversion";
+import FreckExchange from "../projectInterfaces/FreckExchange";
 
-export default [
+export const projects = [
     {
         title: "X5 with Print",
-        description: [
-            <Typography>
-                Split the X5 in order to insert a printer in the middle.
-            </Typography>,
-            <Typography>
-                It was a fun project
-            </Typography>,
-            <Typography>
-                Check it out on youtube: <a href="https://youtu.be/_6OFLXDnSoc?si=X2KOmqTZAqmUWst1">X5 with Print</a>
-            </Typography>
-        ],
-        project: {}
+        project: {
+            img: x5wP,
+            title: "X5 with Print",
+            link: <X5wP />,
+            cols:1,
+            rows:2
+        }
     },
     {
         title: "TheFreck Exchange",
-        description: [
-            <Typography>
-                This is a storefront
-            </Typography>,
-            <Typography>
-                There are a lot of cool features
-            </Typography>,
-            <Typography>
-                And more yet to be developed
-            </Typography>
-        ],
-        project: {}
-    },
-    {
-        project: "Conway's Game of Life",
-        description: [
-            <Typography>
-                This is how the game of life works
-            </Typography>,
-            <Typography>
-                This is how my version works
-            </Typography>
-        ],
-        project: {}
+        project: {
+            img: bowler,
+            title: "TheFreck Exchange",
+            link: <FreckExchange />,
+            cols:2,
+            rows:2
+        }
     },
     {
         title: "React Game Loop",
-        description: [
-            <Typography>
-                A generic game loop for React
-            </Typography>
-        ],
-        project: {}
+        project: {
+            img: LoopImg,
+            title: "Front End Loop",
+            link: <GameLoop />,
+            rows:2,
+            cols:2
+        }
     },
     {
-        title: "Fourier Fun",
-        description: [
-            <Typography>
-                A Fourier transformation that makes really cool visuals
-            </Typography>
-        ],
-        project: {}
+        title: "Conway's Game of Life",
+        project: {
+            img: lifeGif,
+            title: "Conway's Game of Life",
+            link: <Life />,
+            cols: 1,
+            rows:1
+        }
     },
     {
         title: "Circle Inversion",
-        description: [
-            <Typography>
-                Inverting a circle is the 2 dimensional version of y=1/x
-            </Typography>
-        ],
-        project: {}
+        project: {
+            img: circleInversion,
+            title: "Circle Inversion",
+            link: <CircleInversion />,
+            cols:1,
+            rows:1
+        }
     },
     {
-        title: "Bishop Problem",
-        description: [
-            <Typography>
-                The problem is such:
-            </Typography>,
-            <Typography>
-                I'll write it later
-            </Typography>
-        ],
-        project: {}
-    },
-    {
-        title: "Secret Code with Playing Cards",
-        description: [
-            <Typography>
-                This involves encoding the message into a unique ordering of playing cards
-            </Typography>
-        ],
-        project: {}
-    },
-    {
-        title: "Simple Assembly Interpreter",
-        description: [
-            <Typography>
-                An Assembly Interpreter
-            </Typography>,
-            <Typography>
-                A machine within a machine within a machine within a...
-            </Typography>
-        ],
-        project: {}
+        title: "Fourier Fun",
+        project: {
+            img: fourier,
+            title: "Exploration of the Fourier Series",
+            link: "https://thefreck.github.io/Fourier_Fun_p5.js/",
+            rows:1,
+            cols:1
+        }
     },
     {
         title: "Prime Number Generator",
-        description: [
-            <Typography>
-                Generates Prime numbers as far as the eye can see
-            </Typography>            
-        ],
-        project: <Primes />
+        project: {
+            img: primesGif,
+            title: "Prime Number Generator",
+            link: <Primes />,
+            cols:1,
+            rows: 1
+        }
     },
-    {
-        title: "Find the Total Area Covered by Rectangles",
-        description: [
-            <Typography>
-                Given a bunch of rectangles with arbitrary dimensions, what is the total area covered by them?
-            </Typography>
-        ],
-        project: {}
-    },
-    {
-        title: "Finding Integer Partitions",
-        description: [
-            <Typography>
-                Considered an easy hard problem in Mathematics. Very fun to think about...
-            </Typography>
-        ],
-        project: {}
-    },
-    {
-        title: "Parsing and Evaluating Matghematical Expressions",
-        description: [
-            <Typography>
-                From a string input it returns the solutino to the expression
-            </Typography>
-        ],
-        project: {}
-    },
-    {
-        title: "Binary Multiples using Regex",
-        description: [
-            <Typography>
-                Find the multiples using regex
-            </Typography>
-        ],
-        project: {}
-    },
-    {
-        title: "Binomial Expansion",
-        description: [
-            <Typography>
-                performs a binomial expansion
-            </Typography>
-        ],
-        project: {}
-    },
-    {
-        title: "Linear Systems of Equations",
-        description: [
-            <Typography>
-                Evaluates and solves systems of equations
-            </Typography>
-        ],
-        project: {}
-    },
-    {
-        title: "Bubble Trader",
-        description: [
-            <Typography>
-                Simulates an asset market by using the random bounces of bubbles as they bounce against each other and the podiums where assets are sold
-            </Typography>
-        ],
-        project: {}
-    }
+    // {
+    //     title: "Find the Total Area Covered by Rectangles",
+    //     description: [
+    //         <Typography>
+    //             Given a bunch of rectangles with arbitrary dimensions, what is the total area covered by them?
+    //         </Typography>
+    //     ],
+    //     project: {}
+    // },
+    // {
+    //     title: "Finding Integer Partitions",
+    //     description: [
+    //         <Typography>
+    //             Considered an easy hard problem in Mathematics. Very fun to think about...
+    //         </Typography>
+    //     ],
+    //     project: {}
+    // },
+    // {
+    //     title: "Parsing and Evaluating Matghematical Expressions",
+    //     description: [
+    //         <Typography>
+    //             From a string input it returns the solution to the expression
+    //         </Typography>
+    //     ],
+    //     project: {}
+    // },
+    // {
+    //     title: "Binary Multiples using Regex",
+    //     description: [
+    //         <Typography>
+    //             Find the multiples using regex
+    //         </Typography>
+    //     ],
+    //     project: {}
+    // },
+    // {
+    //     title: "Binomial Expansion",
+    //     description: [
+    //         <Typography>
+    //             performs a binomial expansion
+    //         </Typography>
+    //     ],
+    //     project: {}
+    // },
+    // {
+    //     title: "Linear Systems of Equations",
+    //     description: [
+    //         <Typography>
+    //             Evaluates and solves systems of equations
+    //         </Typography>
+    //     ],
+    //     project: {}
+    // },
+    // {
+    //     title: "Bubble Trader",
+    //     description: [
+    //         <Typography>
+    //             Simulates an asset market by using the random bounces of bubbles as they bounce against each other and the podiums where assets are sold
+    //         </Typography>
+    //     ],
+    //     project: {}
+    // },
+    // {
+    //     title: "Simple Assembly Interpreter",
+    //     description: [
+    //         <Typography>
+    //             An Assembly Interpreter
+    //         </Typography>,
+    //         <Typography>
+    //             A machine within a machine within a machine within a...
+    //         </Typography>
+    //     ],
+    //     project: {}
+    // },
 ];
+
+export default projects;
