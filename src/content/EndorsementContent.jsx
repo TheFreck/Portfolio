@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 
 export default [
     {
-        summary: "Eric Bulloch - Senior Developer - Worked together at Packsisze",
+        summary: <Typography><strong>Eric Bulloch</strong> - Senior Developer - Worked together at Packsisze</Typography>,
         body: [
             <Typography>
                 "I am pleased to recommend Chris, with whom I had the pleasure of working at Packsize on different software development teams. Chris consistently demonstrated <b>professionalism, technical expertise, and a collaborative spirit</b> that made him a valuable asset.
@@ -19,7 +19,7 @@ export default [
         ]
     },
     {
-        summary: `Eric Ewing - Senior Manager, Software Engineering, Architecture and Practices - Worked together at Packsize`,
+        summary: <Typography><strong>Eric Ewing</strong> - Senior Manager, Software Engineering, Architecture and Practices - Worked together at Packsize</Typography>,
         body: [
             <Typography>
                 "Chris brings a <b>learning mindset</b> and <b>energy</b> to his role every day! He grew tremendously and was a <b>key contributor</b> to one of the <b>most exciting and innovative programs at Packsize.</b> To see the success of the X5P and the unique capabilities it brings our product portfolio and customers is in no small part thanks to Chris. He <b>works and collaborates well with others.</b> He receives <b>coaching and mentorship</b> from leaders and peers, is <b>genuinely curious,</b>, and wants to grow."
@@ -27,7 +27,7 @@ export default [
         ]
     },
     {
-        summary: `Blake Adams - Software Manager - Worked together at Packsize`,
+        summary: <Typography><strong>Blake Adams</strong> - Software Manager - Worked together at Packsize</Typography>,
         body: [
             <Typography>
                 I highly recommend Chris for any role that requires a <b>talented</b> and <b>reliable</b> software engineer. As their manager, I had the privilege of seeing firsthand their <b>exceptional ability</b> to solve <b>complex problems</b> with a <b>structured, logical approach</b> and <b>impressive mathematical intelligence.</b> Chris consistently demonstrated an <b>analytical mindset,</b> quickly grasping challenging concepts and translating them into <b>effective solutions.</b> Their soft skills were equally commendable; they excel in both <b>communicating ideas clearly</b> and fostering a <b>positive, collaborative team environment.</b> Beyond their technical abilities, Chris genuinely cares about their team members' growth and well-being, going out of their way to support and uplift those around them. They would be a tremendous asset to any organization, <b>both technically and interpersonally.</b>"
@@ -35,7 +35,7 @@ export default [
             </Typography>
         ]
     }, {
-        summary: `Matthew McQuillan - Senior DevOps/SRE Engineer - Worked together at Packsize`,
+        summary: <Typography><strong>Matthew McQuillan</strong> - Senior DevOps/SRE Engineer - Worked together at Packsize</Typography>,
         body: [
             <Typography>
                 "I had the pleasure of working with Chris while I was a DevOps/SRE engineer and he was a Software Engineer. He is a <b>very intelligent</b> and professional developer that always took on <b>difficult code problems</b> (tough dimensioning/design algorithms and mathematical problems) as a <b>personal challenge.</b> As a developer he was very <b>easy to work</b> with and accepted DevOps advice and principles. <b>Very humble</b> and <b>friendly</b> to work with. He will be a great addition to any company with <b>complex</b> automation design/dimensioning products/projects. It was always great working with Chris and he will be missed."
@@ -43,7 +43,7 @@ export default [
         ]
     },
     {
-        summary: `Vaughn Bigham - Software Engineering Manager - Worked together at Prentice Worx`,
+        summary: <Typography><strong>Vaughn Bigham</strong> - Software Engineering Manager - Worked together at Prentice Worx</Typography>,
         body: [
             <Typography>
                 "I highly recommend Chris, with whom I have had the pleasure of knowing for <b>over 20 years</b> in both personal and professional settings. As a software developer, he consistently demonstrates <b>exceptional skill</b> in crafting <b>efficient, innovative solutions</b> to complex logic problems and algorithm design. His <b>passion for optimization</b> drives him to deliver high-quality results that <b>exceed expectations.</b>
@@ -60,7 +60,7 @@ export default [
         ]
     },
     {
-        summary: `David Garcia - Software Craftsman/Software Development Manager - Worked together at Packsize`,
+        summary: <Typography><strong>David Garcia</strong> - Software Craftsman/Software Development Manager - Worked together at Packsize</Typography>,
         body: [
             <Typography>
                 "Software development demands creativity, intelligence, and rigorous learning skills. Chris embodies these qualities exceptionally well. <b>He is one of the most creative individuals I have ever met.</b> His <b>bravery</b> is evident in his successful transition from Finance to Software, where he consistently tackles unique challenges head-on.
@@ -71,7 +71,7 @@ export default [
         ]
     },
     {
-        summary: `Matthew Ray Banks - Software Project Manager - Worked together at Packsize`,
+        summary: <Typography><strong>Matthew Ray Banks</strong> - Software Project Manager - Worked together at Packsize</Typography>,
         body: [
             <Typography>
                 "Chris has easily been one of my favorite Software Engineers I have worked with in my 10+ years as a product manager. He brings a <b>spark, enthusiasm, and sense of humor</b> that was extremely refreshing. He will be a great contributor to any team, any culture, and any company looking for great people. He is also <b>extremely capable of learning new concepts and languages</b>."
