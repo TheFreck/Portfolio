@@ -18,11 +18,6 @@ export const Projects = () => {
             minHeight: "90vh"
         }}
     >
-    <Button
-        onClick={() => setOpen(true)}
-    >
-        Primes
-    </Button>
         <ImageList
             cols={3}
             gap={8}

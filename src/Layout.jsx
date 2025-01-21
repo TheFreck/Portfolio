@@ -15,9 +15,9 @@ const viewEnum = {
 }
 
 export const Layout = () => {
-    const [view,setView] = useState(viewEnum.home);
+    const [view,setView] = useState(viewEnum.about);
 
-    return <Box data-name="box" sx={{flexGrow:1, margin: 0, padding: 0, height: "100vh", width: "100vw"}}>
+    return <Box data-name="box" sx={{flexGrow:1, margin: 0, padding: 0, height: "100vh", width: "100vw", overflow: "hidden"}}>
         <AppBar 
             position="sticky"
             sx={{width: "100vw", margin: 0, padding: 0, height: "20% !important", background: "#adadad"}}
@@ -31,12 +31,12 @@ export const Layout = () => {
                         width: "100%",
                     }}
                 >
-                    <Grid2 size={3}>
-                        <Typography
+                    <Grid2 size={2}>
+                        {/* <Typography
                             onClick={() => setView(viewEnum.home)}
                         >
                             Home
-                        </Typography>
+                        </Typography> */}
                     </Grid2>
                     <Grid2 size={2}>
                         <Typography
@@ -52,14 +52,14 @@ export const Layout = () => {
                             Projects
                         </Typography>
                     </Grid2>
-                    <Grid2>
+                    <Grid2 size={2}>
                         <Typography
                             onClick={() => setView(viewEnum.books)}
                         >
                             Reading List
                         </Typography>
                     </Grid2>
-                    <Grid2 size={3}>
+                    <Grid2 size={2}>
                         <Typography
                             onClick={() => setView(viewEnum.endorsements)}
                         >

@@ -12,6 +12,7 @@ import Life from "../projectInterfaces/Life";
 import GameLoop from "../projectInterfaces/GameLoop";
 import CircleInversion from "../projectInterfaces/CircleInversion";
 import FreckExchange from "../projectInterfaces/FreckExchange";
+import FourierFun from "../projectInterfaces/FourierFun";
 
 export const projects = [
     {
@@ -69,7 +70,7 @@ export const projects = [
         project: {
             img: fourier,
             title: "Exploration of the Fourier Series",
-            link: "https://thefreck.github.io/Fourier_Fun_p5.js/",
+            link: <FourierFun />,
             rows:1,
             cols:1
         }
