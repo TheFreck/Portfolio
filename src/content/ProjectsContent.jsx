@@ -13,18 +13,10 @@ import GameLoop from "../projectInterfaces/GameLoop";
 import CircleInversion from "../projectInterfaces/CircleInversion";
 import FreckExchange from "../projectInterfaces/FreckExchange";
 import FourierFun from "../projectInterfaces/FourierFun";
+import bubbles from "../assets/profileImages/Bubblesljpeg";
+import BubbleTrader from "../projectInterfaces/BubbleTrader";
 
 export const projects = [
-    {
-        title: "X5 with Print",
-        project: {
-            img: x5wP,
-            title: "X5 with Print",
-            link: <X5wP />,
-            cols:1,
-            rows:2
-        }
-    },
     {
         title: "TheFreck Exchange",
         project: {
@@ -73,6 +65,26 @@ export const projects = [
             link: <FourierFun />,
             rows:1,
             cols:1
+        }
+    },
+    {
+        title: "Bubble Trader",
+        project: {
+            img: bubbles,
+            title: "Bubble Trader",
+            link: <BubbleTrader />,
+            rows:1,
+            cols:1
+        }
+    },
+    {
+        title: "X5 with Print",
+        project: {
+            img: x5wP,
+            title: "X5 with Print",
+            link: <X5wP />,
+            cols:1,
+            rows:2
         }
     },
     {
@@ -135,15 +147,6 @@ export const projects = [
     //     description: [
     //         <Typography>
     //             Evaluates and solves systems of equations
-    //         </Typography>
-    //     ],
-    //     project: {}
-    // },
-    // {
-    //     title: "Bubble Trader",
-    //     description: [
-    //         <Typography>
-    //             Simulates an asset market by using the random bounces of bubbles as they bounce against each other and the podiums where assets are sold
     //         </Typography>
     //     ],
     //     project: {}

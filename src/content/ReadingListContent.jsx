@@ -113,14 +113,14 @@ export const nonFiction = [
         ]
     },
     {
-        title: "Why Fish Don't Exist: A Sstory of Loss, Love, and the Hidden Order of Life",
+        title: "Why Fish Don't Exist: A Story of Loss, Love, and the Hidden Order of Life",
         author: "Lulu Miller",
         thoughts: [
             <Typography>
-                In <a href="https://www.goodreads.com/book/show/50887097-why-fish-don-t-exist" target="_blank">Why Fish Don't Exist</a>Lulu Miller explores order and chaos, the Axiom of Choice and the arbitrariness of categories. She takes the reader on a historical journey through the career of David Starr Jordan who catalogued nearly 1/5 fish species known to humans. Throughout his career his careful organization of specimins were ruined many times and had to be reconstituted after say the 1906 San Francisco earthquake which knocked over shelves of specimins in jars. The resilience he had to pick up the shards of his life work each time it was destroyed was one of the inspiring sub plots.
+                In <a href="https://www.goodreads.com/book/show/50887097-why-fish-don-t-exist" target="_blank">Why Fish Don't Exist</a>Lulu Miller explores order and chaos, the Axiom of Choice and the arbitrariness of categories. She takes the reader on a historical journey through the career of David Starr Jordan who catalogued nearly 1/5 fish species known to humans. Throughout his career his careful organization of specimins were ruined many times and had to be reconstituted after say the 1906 San Francisco earthquake knocked over and shattered shelves of labeled specimins in jars. The resilience he had to pick up the shards of his life work each time it was destroyed was one of the inspiring sub plots.
             </Typography>,
             <Typography>
-                The reason this book is so much more than a history of a controversial taxonomist is when she discusses categories. Is a lung fish a fish? It has more in common biologically with a cow than a tuna. We know that dolphins and whales are not fish yet somebody not yet familiar with out classification of mammals might not be able to understand the difference. In other words, classifications are not objective and are useful in their context. However, a different classification regime might be more useful in the long run.
+                The reason this book is so much more than a history of a controversial taxonomist is clear when she discusses categories. Is a lung fish a fish? It has more in common biologically with a cow than a tuna. We know that dolphins and whales are not fish yet somebody not yet familiar with our classification of mammals might not understand the difference at first. In other words, classifications are not objective and are useful in their context. However, a different classification regime might be more useful in the long run.
             </Typography>
         ]
     },
