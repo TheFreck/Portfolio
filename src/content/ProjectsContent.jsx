@@ -13,7 +13,7 @@ import GameLoop from "../projectInterfaces/GameLoop";
 import CircleInversion from "../projectInterfaces/CircleInversion";
 import FreckExchange from "../projectInterfaces/FreckExchange";
 import FourierFun from "../projectInterfaces/FourierFun";
-import bubbles from "../assets/profileImages/Bubblesljpeg";
+import bubbles from "../assets/profileImages/Bubbles.jpeg";
 import BubbleTrader from "../projectInterfaces/BubbleTrader";
 
 export const projects = [
