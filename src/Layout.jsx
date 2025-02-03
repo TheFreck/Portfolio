@@ -40,6 +40,8 @@ export const Layout = () => {
                     </Grid2>
                     <Grid2 size={2}>
                         <Typography
+                            sx={{cursor: "pointer"
+                            }}
                             onClick={() => setView(viewEnum.about)}
                         >
                             About Me
@@ -47,6 +49,8 @@ export const Layout = () => {
                     </Grid2>
                     <Grid2 size={2}>
                         <Typography
+                            sx={{cursor: "pointer"
+                            }}
                             onClick={() => setView(viewEnum.projects)}
                         >
                             Projects
@@ -54,6 +58,8 @@ export const Layout = () => {
                     </Grid2>
                     <Grid2 size={2}>
                         <Typography
+                            sx={{cursor: "pointer"
+                            }}
                             onClick={() => setView(viewEnum.books)}
                         >
                             Reading List
@@ -61,6 +67,8 @@ export const Layout = () => {
                     </Grid2>
                     <Grid2 size={2}>
                         <Typography
+                            sx={{cursor: "pointer"
+                            }}
                             onClick={() => setView(viewEnum.endorsements)}
                         >
                             Endorsements
