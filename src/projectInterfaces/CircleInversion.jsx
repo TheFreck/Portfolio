@@ -9,10 +9,10 @@ export const CircleInversion = () => {
 
     return (
         <Paper
-        sx={{
-            margin: "auto",
-            padding: "5vh 5vw 10vh 5vw"
-        }}
+            sx={{
+                margin: "auto",
+                padding: "5vh 5vw 10vh 5vw"
+            }}
         >
             <Typography
                 variant="h4"

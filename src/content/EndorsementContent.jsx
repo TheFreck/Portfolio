@@ -19,14 +19,6 @@ export default [
         ]
     },
     {
-        summary: <Typography><strong>Eric Ewing</strong> - Senior Manager, Software Engineering, Architecture and Practices - Worked together at Packsize</Typography>,
-        body: [
-            <Typography>
-                "Chris brings a <b>learning mindset</b> and <b>energy</b> to his role every day! He grew tremendously and was a <b>key contributor</b> to one of the <b>most exciting and innovative programs at Packsize.</b> To see the success of the X5P and the unique capabilities it brings our product portfolio and customers is in no small part thanks to Chris. He <b>works and collaborates well with others.</b> He receives <b>coaching and mentorship</b> from leaders and peers, is <b>genuinely curious,</b>, and wants to grow."
-            </Typography>
-        ]
-    },
-    {
         summary: <Typography><strong>Blake Adams</strong> - Software Manager - Worked together at Packsize</Typography>,
         body: [
             <Typography>
@@ -67,6 +59,14 @@ export default [
             </Typography>,
             <Typography>
                 "I recommend Chris for your next venture. He is not only <b>smart</b> and <b>fun to work with</b> but also uniquely talented. As you can see from his posts, he has a strong <b>focus on quality results.</b>"
+            </Typography>
+        ]
+    },
+    {
+        summary: <Typography><strong>Eric Ewing</strong> - Senior Manager, Software Engineering, Architecture and Practices - Worked together at Packsize</Typography>,
+        body: [
+            <Typography>
+                "Chris brings a <b>learning mindset</b> and <b>energy</b> to his role every day! He grew tremendously and was a <b>key contributor</b> to one of the <b>most exciting and innovative programs at Packsize.</b> To see the success of the X5P and the unique capabilities it brings our product portfolio and customers is in no small part thanks to Chris. He <b>works and collaborates well with others.</b> He receives <b>coaching and mentorship</b> from leaders and peers, is <b>genuinely curious</b>, and wants to grow."
             </Typography>
         ]
     },

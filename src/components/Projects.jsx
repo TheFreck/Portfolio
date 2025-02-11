@@ -43,7 +43,6 @@ export const Projects = () => {
                                 cursor: "pointer"
                             }}
                             onClick={() => {
-                                console.log("icon: ", p.title);
                                 setCurrent(p.project.link)
                                 setOpen(true);
                             }}
