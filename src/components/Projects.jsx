@@ -1,13 +1,14 @@
-import { Box, Button, Grid2, IconButton, ImageList, ImageListItem, ImageListItemBar, Modal, Paper } from "@mui/material";
+import { Box, Button, Grid2, IconButton, ImageList, ImageListItem, ImageListItemBar, Link, Modal, Paper, Tooltip } from "@mui/material";
 import react, { useRef, useState } from "react";
 import Primes from "../projectInterfaces/Primes";
 import CloseIcon from '@mui/icons-material/Close';
 import projects from "../content/ProjectsContent";
 import InfoIcon from '@mui/icons-material/Info';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 export const Projects = () => {
-    const [open,setOpen] = useState(false);
-    const [current,setCurrent] = useState(<Primes />);
+    const [open, setOpen] = useState(false);
+    const [current, setCurrent] = useState(<Primes />);
     const modalRef = useRef();
 
     return <Box
@@ -24,36 +25,40 @@ export const Projects = () => {
             variant="masonry"
         >
             {
-                projects && projects.map((p,i) => (
-                    <ImageListItem 
+                projects && projects.map((p, i) => (
+                    <ImageListItem
                         key={i}
-                        cols={p.project.cols} 
+                        cols={p.project.cols}
                         rows={p.project.rows}
+                        sx={{
+                            cursor: "pointer"
+                        }}
                     >
                         <img
                             srcSet={p.project.img}
                             src={p.project.img}
                             alt={p.project.title}
                             loading="lazy"
-                        />
-                        <ImageListItemBar 
-                            title={p.title}
-                            subtitle={p.title}
-                            sx={{
-                                cursor: "pointer"
-                            }}
                             onClick={() => {
                                 setCurrent(p.project.link)
                                 setOpen(true);
                             }}
-                            actionIcon={
-                                <IconButton
-                                >
-                                    <InfoIcon />
-                                </IconButton>
-                            }
+                        />
+                        <Link 
+                            href={p.project.repo} 
+                            target="_blank"
                         >
-                        </ImageListItemBar>
+                            <ImageListItemBar
+                                title={p.title}
+                                subtitle="View Repo"
+                                actionIcon={
+                                    <IconButton>
+                                        <InfoIcon />
+                                    </IconButton>
+                                }
+                            >
+                            </ImageListItemBar>
+                        </Link>
                     </ImageListItem>
                 ))
             }
@@ -72,11 +77,11 @@ export const Projects = () => {
             >
                 <Grid2
                     sx={{
-                        display: "flex", 
+                        display: "flex",
                         flexDirection: "row-reverse",
                     }}
                 >
-                    <CloseIcon 
+                    <CloseIcon
                         sx={{
                             fontSize: "3em",
                             marginTop: "1vh",

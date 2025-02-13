@@ -16,7 +16,7 @@ export const Life = () => {
             <hr/>
             <Typography
                 variant="h6"
-                >
+            >
                 John Conway's Game of Life is a fun way to explore chaos and complexity. The game board is a grid where each cell can be either alive or dead. If a cell is alive and it has either 3 or 4 live neighbors then it will survive the round and live into the next generation. If a cell is dead but it has 3 neighbors then it will come alive in the next round.
             </Typography>
             <br/>
@@ -33,7 +33,7 @@ export const Life = () => {
             </Typography>
             <br/>
             <Typography>
-                * This application was built on Game Loop framework in my React Game Loop project also listed here.
+                * This application was built on the framework in my React Game Loop project also listed here.
             </Typography>
         </Paper>
     )

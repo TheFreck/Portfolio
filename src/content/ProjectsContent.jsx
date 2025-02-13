@@ -23,6 +23,7 @@ export const projects = [
             img: bowler,
             title: "TheFreck Exchange",
             link: <FreckExchange />,
+            repo: "https://github.com/TheFreck/theFreckExchange",
             cols:2,
             rows:2
         }
@@ -33,6 +34,7 @@ export const projects = [
             img: LoopImg,
             title: "Front End Loop",
             link: <GameLoop />,
+            repo: "https://github.com/TheFreck/ReactGameLoop",
             rows:2,
             cols:2
         }
@@ -43,6 +45,7 @@ export const projects = [
             img: lifeGif,
             title: "Conway's Game of Life",
             link: <Life />,
+            repo: "https://github.com/TheFreck/TheGameOfLife",
             cols: 1,
             rows:1
         }
@@ -53,6 +56,7 @@ export const projects = [
             img: circleInversion,
             title: "Circle Inversion",
             link: <CircleInversion />,
+            repo: "https://github.com/TheFreck/Circle_Inversion",
             cols:1,
             rows:1
         }
@@ -63,6 +67,7 @@ export const projects = [
             img: fourier,
             title: "Exploration of the Fourier Series",
             link: <FourierFun />,
+            repo: "https://github.com/TheFreck/Fourier_Fun_p5.js",
             rows:1,
             cols:1
         }
@@ -73,6 +78,7 @@ export const projects = [
             img: bubbles,
             title: "Bubble Trader",
             link: <BubbleTrader />,
+            repo: "https://github.com/TheFreck/BubbleTrader",
             rows:1,
             cols:1
         }
@@ -93,6 +99,7 @@ export const projects = [
             img: primesGif,
             title: "Prime Number Generator",
             link: <Primes />,
+            repo: "https://github.com/TheFreck/CodeKataPrimeStreaming",
             cols:1,
             rows: 1
         }

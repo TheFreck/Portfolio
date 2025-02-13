@@ -141,7 +141,7 @@ export const nonFiction = [
                 How to account for the things we never thought to think about? <a href="https://www.goodreads.com/book/show/242472.The_Black_Swan" target="_blank">A Black Swan</a> is an event that is highly improbable and nearly impossible to predict, but carries a massive impact. The process of creation takes many years yet can be undone by large impact events over night. The author was born in Lebanon and experienced the Lebanese revolution first hand. He saw hundreds of years of development destroyed in a flash of violence. He also worked as a quantitative trader on Wallstreet and published this book mere months before the Housing Market collapsed in 2007-2008.
             </Typography>,
             <Typography>
-                Typically we would expect that 68% of the time the market would move up or down within 1 standard deviation of normal; 95% of the time is should fall within 2; 99.7% of the time it should fall within 3. In 2008 the market had many days within short periods of time that were well above those 3 standard deviations. In terms of a normal distribution these events should not happen that often.
+                Typically we would expect that 68% of the time the market would move up or down within 1 standard deviation of normal; 95% of the time is should fall within 2; 99.7% of the time it should fall within 3. In 2008 the market had many days within short periods of time that were well above those 3 standard deviations. In normal distributions these events should not happen so frequently.
             </Typography>,
             <Typography>
                 Taleb refers to these events as <em>Fat Tails</em>. He would suggest that the probabilities should not drop off as quickly as they do in a normal Gaussian bell curve. The tails are the right and left most sections where extremely uncommon events are. A fat tail is a modification of the standard bell curve to account for more unusual events.
@@ -149,17 +149,100 @@ export const nonFiction = [
         ]
     },
     {
-        title: "The Case Against Reality",
+        title: "The Case Against Reality: Why Evolution Hid the Truth from our Eyes",
         author: "Donald Hoffman",
         thoughts: [
             <Typography>
-                explores the nature of consciousness and the world it interacts with through holography, computer science and wave interference patterns scentral to our current understanding of quantum mechanics to ddeliver the tastiest metaphysical brain candy.
+                <a href="https://www.goodreads.com/book/show/41817484-the-case-against-reality?from_search=true&from_srp=true&qid=GiesAKZvYa&rank=1" target="_blank">Donald Hoffman takes us through</a> many of the ways our senses provide us not with an accurate accounting of reality, but with fitness payoffs that lead to propogating our genes. He calls this framework Fitness Beats Truth or the FBT Theorem. Citing <em>Universal Darwinism</em> he discusses how a <em>reality</em> based life form would not survive in a world that includes <em>fitness</em> based life.
+            </Typography>,
+            <Typography>
+                To make the case he draws on the analogy of the computer desktop. The icons do not show the "truth" of the processes going on inside the computer to render their image. Such an acurate representation would make the computer unusable. If in doubt on this point, take out a whiteboard and try going through all the binary operations needed to access your document and add text to it. If you've made it this far then you realize just how far removed our experience of the process differs from the reality of the process. This can be extended to all other facets of our experiences.
+            </Typography>,
+            <Typography>
+                One of the more fascinating sections relates to <em>Holography</em>. By capturing the wave interference pattern of light as it interacts with objects in a scene we can recreate the entire three dimensional scene on a two dimenisonal surface. But if you cut that surface into pieces you can use any of those pieces to view the entire holograph. The scene will remain the same size but you will only see as much of it at a time as the size of the piece will allow.
+            </Typography>,
+            <Typography> 
+                Through this he highlights the importance of <em>perspective</em>. The universe is subdivided into perspectives. Each one is able to access the whole, but only as much at a time as can be experienced through a single point of perception. In this framing, the event horizon of a black hole is not an <em>event</em> for the one crossing it, but rather marks the limit of the perspective of the one on the other side.
+            </Typography>,
+            <Typography>
+                A less passive name for <em>perspective</em> can be <em>agent</em>. An agent acts based on what is perceived. An agent can also be subdivided into sub-agents who also act based on what is perceived. Subdivided agents act based on the actions of other agents who then react in a circular fashion. A good conversation is one in which each party hears and responds to the other party who then listens and crafts a response.
+            </Typography>,
+            <Typography>
+                The coup de gr&#226;ce is to follow the logic of subdivision down to its atomic parts. A complex agent such as a human is able to make very complex and complicated decisions. But a human is made of organs. A kidney gets to decide how many electrolytes to allow back into the blood stream after filtering. But a kidney is made of tissues which are made of cells which are made of organelles. At each level the <em>agent</em> is able to make decisions relevant to their experience. The simplest agent one can imagine is a one-bit agent who gets to decide between two states: "Yes" or "No"; "True" or "False". Example of a 1 bit agent might be a neuron or a photo-receptor in your eye. A neuron will fire only if the incoming charge is beyond a threshold. A photo-receptor will only fire if it receives a photon. Combining one-bit agents allows for a great deal of logical complexity. 
+            </Typography>,
+            <Typography>
+                Don't be surprised if after reading this book you look at yourself and the world very differently. While certain sections can be challenging, the real difficulty would be remaining unchanged!
+            </Typography>
+        ]
+    },
+    {
+        title: "Tractatus Logico-Philosophicus",
+        author: "Ludwig Wittgenstein",
+        thoughts: [
+            <Typography>
+                Verbal language is full of vagueries and inconsistencies. In this <a href="https://www.goodreads.com/book/show/12075.Tractatus_Logico_Philosophicus" target="_blank">book</a> he outlines how one might create a purely logical and consistent language and in the process invents programming languages.
+            </Typography>,
+            <Typography
+                sx={{padding: "1vw"}}
+            >
+                The chapters are organized similar to an outline. The first chapter reads:
+                <br/>
+                <span
+                    style={{padding: "1vw"}}
+                >
+                    <b>1:</b> The world is everything that is the case.
+                </span>
+                    <br/>
+                <span
+                    style={{padding: "1vw"}}
+                >
+                    <b>1.1:</b> The world is the totality of facts, not of things.
+                </span>
+                    <br/>
+                <span
+                    style={{padding: "1vw"}}
+                >
+                    <b>1.11:</b> The world is determined by the facts and by these beting <em>all</em> the facts.
+                </span>
+                    <br/>
+                <span
+                    style={{padding: "1vw"}}
+                >
+                    <b>1.12:</b> For the totality of facts determines both what is the case, and also sall that is not the case.
+                </span>
+                    <br/>
+                <span
+                    style={{padding: "1vw"}}
+                >
+                    <b>1.13:</b> The facts in logical space are the world.
+                </span>
+                    <br/>
+                <span
+                    style={{padding: "1vw"}}
+                >
+                    <b>1.2:</b> The world divides into facts.
+                </span>
+                    <br/>
+                <span
+                    style={{padding: "1vw"}}
+                >
+                    <b>1.21:</b> Any one can either be the case or not be the case, and everything else remain the same.
+                </span>
+            </Typography>,
+            <Typography>
+                While this book is seven chapters spread over only 80 pages it will take much more than a single reading to understand. The world he describes is one of <em>Atomic Facts</em>, not of objects in the traditional sense. An atomic fact is built on other atomic facts which are themselves built on atomic facts. He does not identify the turtle at the bottom of the stack. 
+            </Typography>,
+            <Typography>
+                Atomic facts can either be <em>true</em> or <em>false</em> and exist in a logical space where the can be combined into <em>logical objects</em> that contain all possible states of affair.
+            </Typography>,
+            <Typography>
+                While computer programming languages did not exist when this book was published in 1922, they do provide a helpful framework for understanding his ideas. When a computer is turned on the first thing that happens is that logic is established. From that logic a language is established. From that language processes are triggered. From those processes the rest of the world springs to life. Everytime a computer is started it creates the entire world in which it will operate; a world of facts, not things, that can be traced down to 1's and 0's.
             </Typography>
         ]
     },
     {
         title: "A Most Elegant Equation",
-        author: "David Stipp",
+        author: "David Stipp *",
         thoughts: [
             <Typography>
                 e to the i pi - 1 = 0
@@ -168,7 +251,7 @@ export const nonFiction = [
     },
     {
         title: "Conscious",
-        author: "Annaka Harris",
+        author: "Annaka Harris *",
         thoughts: [
             <Typography>
                 dealing with the "Hard" problem of conciousnsess
@@ -177,7 +260,7 @@ export const nonFiction = [
     },
     {
         title: "The Holographic Universe",
-        author: "Michael Talbot",
+        author: "Michael Talbot *",
         thoughts: [
             <Typography>
                 How holography helps explain this thing we're all experiencing
@@ -186,7 +269,7 @@ export const nonFiction = [
     },
     {
         title: "Man's Search For Meaning",
-        author: "Viktor E. Frankl",
+        author: "Viktor E. Frankl *",
         thoughts: [
             <Typography>
                 The meaning of life is the search for the meaning of life
@@ -195,7 +278,7 @@ export const nonFiction = [
     },
     {
         title: "The Righteous Mind",
-        author: "Jonathan Haidt",
+        author: "Jonathan Haidt *",
         thoughts: [
             <Typography>
                 Moral decision making based on moral foundations theory
@@ -204,7 +287,7 @@ export const nonFiction = [
     },
     {
         title: "Your Are Not So Smart",
-        author: "David McRaney",
+        author: "David McRaney *",
         thoughts: [
             <Typography>
                 A humbling look at how irrationality invades all level of decision making
