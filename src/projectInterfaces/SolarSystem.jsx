@@ -22,7 +22,7 @@ export const SolarSystem = () => {
         <Typography
             variant="h6"
         >
-            While building out the Sun, Earth and the Moon I got carried away (not uncommon on curiosity projects!) and built out the inner solar system, Jupiter, and the astroid belt. The astroids are algorithmically generated and around 16% of them have another astroid orbiting them. This matches observations. Also, the Earth sits at a 23&#176; tilt which is responsible for our four seasons. This was an interesting problem to solve. In order to make the tilt consistent as it revolves around the sun I had to embed a mesh responsible for the tilt that I could reverse rotate as the planet revolved. Solving the "tilt problem" for Earth allowed me to easily tilt Mars at 25 degrees. If you zoom in you can see the tilt in the way the moons orbit their planets.
+            While building out the Sun, Earth and the Moon I got carried away (not uncommon on curiosity projects!) and built out the inner solar system, Jupiter, and the astroid belt. The astroids are algorithmically generated and around 16% of them have another astroid orbiting them. This matches observations. Also, the Earth sits at a 23&#176; tilt which is responsible for our four seasons. This was an interesting problem to solve. In order to make the tilt consistent as it revolves around the sun I had to embed a mesh responsible for the tilt that I could reverse rotate as the planet revolved. Solving the "tilt problem" for Earth allowed me to easily tilt Mars at 25&#176;. If you zoom in you can see the tilt in the way the moons orbit their planets.
         </Typography>
         <br/>
         <Typography>
