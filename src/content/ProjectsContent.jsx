@@ -7,6 +7,7 @@ import LoopImg from "../assets/profileImages/Loop.png";
 import circleInversion from "../assets/profileImages/circleInversion.png";
 import fourier from "../assets/profileImages/fourier.jpg";
 import primesGif from "../assets/profileImages/primes.gif";
+import solarImg from "../assets/profileImages/solarSystem.png";
 import X5wP from "../projectInterfaces/X5wP";
 import Life from "../projectInterfaces/Life";
 import GameLoop from "../projectInterfaces/GameLoop";
@@ -15,6 +16,7 @@ import FreckExchange from "../projectInterfaces/FreckExchange";
 import FourierFun from "../projectInterfaces/FourierFun";
 import bubbles from "../assets/profileImages/bubbles.jpeg";
 import BubbleTrader from "../projectInterfaces/BubbleTrader";
+import SolarSystem from "../projectInterfaces/SolarSystem";
 
 export const projects = [
     {
@@ -48,6 +50,17 @@ export const projects = [
             repo: "https://github.com/TheFreck/TheGameOfLife",
             cols: 1,
             rows:1
+        }
+    },
+    {
+        title: "Solar System",
+        project: {
+            img: solarImg,
+            title: "Solar System Simulation",
+            link: <SolarSystem />,
+            repo: "https://github.com/TheFreck/SolarSystem",
+            cols: 1,
+            rowss: 1
         }
     },
     {
@@ -103,7 +116,7 @@ export const projects = [
             cols:1,
             rows: 1
         }
-    },
+    }
     // {
     //     title: "Find the Total Area Covered by Rectangles",
     //     description: [
