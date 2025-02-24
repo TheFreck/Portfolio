@@ -10,7 +10,7 @@ export const SolarSystem = () => {
         <Typography
             variant="h4"
         >
-            <a src="https://thefreck.github.io/SolarSystem/" target="_blank">Solar System Simulator</a>
+            <a href="https://thefreck.github.io/SolarSystem/" target="_blank">Solar System Simulator</a>
         </Typography>
         <hr/>
         <Typography
