@@ -156,7 +156,7 @@ export const nonFiction = [
                 <a href="https://www.goodreads.com/book/show/41817484-the-case-against-reality?from_search=true&from_srp=true&qid=GiesAKZvYa&rank=1" target="_blank">Donald Hoffman takes us through</a> many of the ways our senses provide us not with an accurate accounting of reality, but with fitness payoffs that lead to propogating our genes. He calls this framework Fitness Beats Truth or the FBT Theorem. Citing <em>Universal Darwinism</em> he discusses how a <em>reality</em> based life form would not survive in a world that includes <em>fitness</em> based life.
             </Typography>,
             <Typography>
-                To make the case he draws on the analogy of the computer desktop. The icons do not show the "truth" of the processes going on inside the computer to render their image. Such an acurate representation would make the computer unusable. If in doubt on this point, take out a whiteboard and try going through all the binary operations needed to access your document and add text to it. If you've made it this far then you realize just how far removed our experience of the process differs from the reality of the process. This can be extended to all other facets of our experiences.
+                To make the case he draws on the analogy of the computer desktop. The icons do not show the "truth" of the processes going on inside the computer to render their image. Such an acurate representation would make the computer unusable. If in doubt on this point, take out a whiteboard and try going through all the binary operations needed to access your document and add text to it. If you've made it this far then you realize just how far removed our experience of the process is from the reality of the process. This can be extended to all other facets of our experiences.
             </Typography>,
             <Typography>
                 One of the more fascinating sections relates to <em>Holography</em>. By capturing the wave interference pattern of light as it interacts with objects in a scene we can recreate the entire three dimensional scene on a two dimenisonal surface. But if you cut that surface into pieces you can use any of those pieces to view the entire holograph. The scene will remain the same size but you will only see as much of it at a time as the size of the piece will allow.
@@ -202,13 +202,13 @@ export const nonFiction = [
                 <span
                     style={{padding: "1vw"}}
                 >
-                    <b>1.11:</b> The world is determined by the facts and by these beting <em>all</em> the facts.
+                    <b>1.11:</b> The world is determined by the facts and by these being <em>all</em> the facts.
                 </span>
                     <br/>
                 <span
                     style={{padding: "1vw"}}
                 >
-                    <b>1.12:</b> For the totality of facts determines both what is the case, and also sall that is not the case.
+                    <b>1.12:</b> For the totality of facts determines both what is the case, and also all that is not the case.
                 </span>
                     <br/>
                 <span
@@ -233,7 +233,7 @@ export const nonFiction = [
                 While this book is seven chapters spread over only 80 pages it will take much more than a single reading to understand. The world he describes is one of <em>Atomic Facts</em>, not of objects in the traditional sense. An atomic fact is built on other atomic facts which are themselves built on atomic facts. He does not identify the turtle at the bottom of the stack. 
             </Typography>,
             <Typography>
-                Atomic facts can either be <em>true</em> or <em>false</em> and exist in a logical space where the can be combined into <em>logical objects</em> that contain all possible states of affair.
+                Atomic facts can either be <em>true</em> or <em>false</em> and exist in a logical space where they can be combined into <em>logical objects</em> that contain all possible states of affairs.
             </Typography>,
             <Typography>
                 While computer programming languages did not exist when this book was published in 1922, they do provide a helpful framework for understanding his ideas. When a computer is turned on the first thing that happens is that logic is established. From that logic a language is established. From that language processes are triggered. From those processes the rest of the world springs to life. Everytime a computer is started it creates the entire world in which it will operate; a world of facts, not things, that can be traced down to 1's and 0's.
