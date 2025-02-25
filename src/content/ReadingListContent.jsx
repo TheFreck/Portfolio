@@ -24,7 +24,7 @@ export const nonFiction = [
         author: "Mary Poppendieck and Tom Poppendieck",
         thoughts: [
             <Typography>
-                <a href="https://www.goodreads.com/book/show/194338.Lean_Software_Development" target="_blank">LEAN</a> is an amazing methodology that addresses the extreme leverage the developer has over outcomes. Decisions made today have a compounding effect and given the pace of development flaws in the system become tech debt that will have to compete with new initiatives. As a result quality must be built in from the beginning. This gives rise to concepts like delayed decision making until as much is known as possible. That way the best decision is made and does not need to be revisited because new information comes to light. Of course perfect decisions require the kind of hindsight that is not available to the decision maker and so flexibility is key. Overall, LEAN methodology fosters quality and adaptability that will live long after the original decisions have been made.
+                <a href="https://www.goodreads.com/book/show/194338.Lean_Software_Development" target="_blank">LEAN</a> is an amazing methodology that addresses the extreme leverage the developer has over outcomes. Decisions made today have a compounding effect and given the pace of development, flaws in the system become tech debt that will have to compete with new initiatives down the road. As a result quality must be built in from the beginning. This gives rise to concepts like delayed decision making until as much is known as possible. That way the best decision is made and does not need to be revisited because new information comes to light. Of course perfect decisions require the kind of hindsight that is not available to the decision maker and so flexibility is key. Overall, LEAN methodology fosters quality and adaptability that will live long after the original decisions have been made.
             </Typography>
         ]
     },
@@ -51,7 +51,7 @@ export const nonFiction = [
         author: "Jordan Ellenberg",
         thoughts: [
             <Typography>
-                <a href="https://www.goodreads.com/book/show/56430139-shape" target="_blank">Jordan Ellenberg</a> explores axiomatic learning, or building on what we already know (axioms). Challenging axioms can lead to new insights in an ever evolving understanding of what is true while identifying what only seems true when unchallenged.
+                <a href="https://www.goodreads.com/book/show/56430139-shape" target="_blank">Jordan Ellenberg</a> explores axiomatic learning, or building on what we already know. Challenging axioms can lead to new insights in an ever evolving understanding of what is true while identifying what only seems true when unchallenged.
             </Typography>
         ]
     },
@@ -117,7 +117,7 @@ export const nonFiction = [
         author: "Lulu Miller",
         thoughts: [
             <Typography>
-                In <a href="https://www.goodreads.com/book/show/50887097-why-fish-don-t-exist" target="_blank">Why Fish Don't Exist</a>Lulu Miller explores order and chaos, the Axiom of Choice and the arbitrariness of categories. She takes the reader on a historical journey through the career of David Starr Jordan who catalogued nearly 1/5 fish species known to humans. Throughout his career his careful organization of specimins were ruined many times and had to be reconstituted after say the 1906 San Francisco earthquake knocked over and shattered shelves of labeled specimins in jars. The resilience he had to pick up the shards of his life work each time it was destroyed was one of the inspiring sub plots.
+                In <a href="https://www.goodreads.com/book/show/50887097-why-fish-don-t-exist" target="_blank">Why Fish Don't Exist</a>Lulu Miller explores order and chaos, the Axiom of Choice and the arbitrariness of categories. She takes the reader on a historical journey through the career of David Starr Jordan who catalogued nearly 1/5 of the fish species known to humans. Throughout his career his careful organization of specimins were ruined many times and had to be reconstituted after say the 1906 San Francisco earthquake knocked over and shattered shelves of labeled specimins in jars. The resilience he had to pick up the shards of his life work each time it was destroyed was one of the inspiring sub plots.
             </Typography>,
             <Typography>
                 The reason this book is so much more than a history of a controversial taxonomist is clear when she discusses categories. Is a lung fish a fish? It has more in common biologically with a cow than a tuna. We know that dolphins and whales are not fish yet somebody not yet familiar with our classification of mammals might not understand the difference at first. In other words, classifications are not objective and are useful in their context. However, a different classification regime might be more useful in the long run.
