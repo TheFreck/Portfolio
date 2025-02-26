@@ -5,23 +5,7 @@ import hatTip from "../assets/profileImages/hatTip.jpg";
 import bigSmile from "../assets/profileImages/bigSmile.jpg";
 import hatSmile from "../assets/profileImages/hatSmile.jpg";
 import hatSmile2 from "../assets/profileImages/hatSmile2.jpg";
-import timp from "../assets/profileImages/timp.jpg";
-import banjoBacklight from "../assets/profileImages/banjoBacklight.jpg"
-import rubiks1 from "../assets/profileImages/rubiks1.jpg";
-import rubiks2 from "../assets/profileImages/rubiks2.jpg";
-import fiveThree from "../assets/profileImages/five&three.jpg";
-import unsolvedGhost from "../assets/profileImages/unsolvedGhost.jpg";
-import solvedGhost from "../assets/profileImages/solvedGhost.jpg";
 import content from "../content/AboutMeContent";
-
-const goPositions = <p>1.74089650659 × 10<sup>172</sup> (that's 17,408,965,065,900,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000 ways of organizing stones on a board)</p>
-const totalAtoms = <p>10<sup>80</sup></p>
-const timpanogos = <img src={timp} style={{width: "20vw", overflow: "hidden"}} />
-const banjoBack = <img src={banjoBacklight} style={{width: "20vw", overflow: "hidden"}} />
-const rubik2 = <img src={rubiks2} style={{width: "20vw"}} />
-const five3 = <img src={fiveThree} style={{width: "20vw"}} />
-const unGhost = <img src={unsolvedGhost} style={{width: "20vw"}} />
-const ghost = <img src={solvedGhost} style={{width: "20vw"}} />
 
 export const AboutMe = () => {
     const [imageClick, setImageClick] = useState(0);
@@ -45,7 +29,7 @@ export const AboutMe = () => {
             sx={{display: "flex", flexDirection: "row", textWrap: "pretty"}}
         >
             <Tooltip 
-                title="click photo" 
+                title="click photo to scroll" 
                 placement="bottom-end"
                 slotProps={{
                     popper: {
@@ -64,7 +48,7 @@ export const AboutMe = () => {
                 <Grid2 size={3}>
                     <img src={profileImages[imageClick]} 
                         style={{
-                            width: "10vw",
+                            width: "9vw",
                             borderRadius: "50%",
                             boxShadow: "10px 10px 15px gray",
                             marginLeft: "-2vw",
@@ -77,6 +61,7 @@ export const AboutMe = () => {
                 {content[0]}
                 <br/>
                 {content[1]}
+                <br />
             </Grid2>
         </Grid2>
         {

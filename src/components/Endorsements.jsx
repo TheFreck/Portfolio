@@ -24,11 +24,7 @@ export const Endorsements = () => {
                     onChange={() => expanded !== `panel${i}` ? setExpanded(`panel${i}`) : setExpanded("default")}
                 >
                     <AccordionSummary>
-                        <Typography
-                            sx={{marginLeft: "1vw"}}
-                        >
-                            {e.summary}
-                        </Typography>
+                        {e.summary}
                     </AccordionSummary>
                     <AccordionDetails>
                         {

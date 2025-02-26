@@ -5,6 +5,7 @@ import AboutMe from "./components/AboutMe";
 import Projects from "./components/Projects";
 import ReadingList from "./components/ReadingList";
 import Endorsements from "./components/Endorsements";
+import AboutThree from "./components/AboutThree";
 
 const viewEnum = {
     home: 0,
@@ -32,11 +33,13 @@ export const Layout = () => {
                     }}
                 >
                     <Grid2 size={2}>
-                        {/* <Typography
+                        <Typography
+                            sx={{cursor: "pointer"
+                            }}
                             onClick={() => setView(viewEnum.home)}
                         >
                             Home
-                        </Typography> */}
+                        </Typography>
                     </Grid2>
                     <Grid2 size={2}>
                         <Typography
@@ -78,7 +81,7 @@ export const Layout = () => {
             </Toolbar>
             {
                 view === viewEnum.home && 
-                <Home />
+                <AboutThree setView={setView} viewEnum={viewEnum} />
             }{
                 view === viewEnum.about &&
                 <AboutMe />

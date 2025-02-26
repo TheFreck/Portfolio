@@ -11,7 +11,8 @@ import rubiks2 from "../assets/profileImages/rubiks2.jpg";
 import fiveThree from "../assets/profileImages/five&three.jpg";
 import unsolvedGhost from "../assets/profileImages/unsolvedGhost.jpg";
 import solvedGhost from "../assets/profileImages/solvedGhost.jpg";
-import Photos from "../components/Photos";
+import HikingPhotos from "../components/HikingPhotos";
+import MusicPhotos from "../components/MusicPhotos";
 
 const goPositions = <p>1.74089650659 × 10<sup>172</sup> (that's 17,408,965,065,900,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000 ways of organizing stones on a board)</p>
 const totalAtoms = <p>10<sup>80</sup> (that's 100,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000 protons, electrons, neutrons and other particles in the visible universe!!!)</p>
@@ -41,7 +42,7 @@ export const AboutMeContent = [
     <Typography
         style={{textAlign: "justify"}}
     >
-        Beyond developing clean and efficient software I enjoy pushing myself both physically and mentally. Of particular interest are mathematics, physics, philosophy, economics, the game of Go, <Tooltip title={banjoBack}><em>music (theory and practice)</em></Tooltip> and <Tooltip title={rubik2}><em>algorithmically</em></Tooltip> solving <Tooltip title={five3}><em>patterns</em></Tooltip> on <Tooltip title={unGhost}><em>rubik's cubes</em></Tooltip> of <Tooltip title={ghost}><em>all types.</em></Tooltip>
+        Beyond developing clean and efficient software I enjoy pushing myself both physically and mentally. Of particular interest are mathematics, physics, philosophy, economics, the game of Go, <Tooltip title={<MusicPhotos />}><em>music (theory and practice)</em></Tooltip> and <Tooltip title={rubik2}><em>algorithmically</em></Tooltip> solving <Tooltip title={five3}><em>patterns</em></Tooltip> on <Tooltip title={unGhost}><em>rubik's cubes</em></Tooltip> of <Tooltip title={ghost}><em>all types.</em></Tooltip>
     </Typography>,
     <Typography
         style={{textAlign: "justify"}}
@@ -51,7 +52,7 @@ export const AboutMeContent = [
     <Typography
         style={{textAlign: "justify"}}
     >
-        On weekends I enjoy standing on top of one of the many mountains that surround the valley. Of course, standing on the summit only means something if I worked hard to get there. Spending an entire day pushing myself to exhaustion to reach the top of <Tooltip placement="left-start" title={<Photos />}><em>Lone Peak or Timpanogos</em></Tooltip> has opened up solutions to life and engineering problems that were not obvious from the outset. I'm fairly convinced that the key to solving intractable problems of all kinds involves moving my legs.
+        On weekends I enjoy standing on top of one of the many mountains that surround the valley. Of course, standing on the summit only means something if I worked hard to get there. Spending an entire day pushing myself to exhaustion to reach the top of <Tooltip placement="left-start" title={<HikingPhotos />}><em>Lone Peak or Timpanogos</em></Tooltip> has opened up solutions to life and engineering problems that were not obvious from the outset. I'm fairly convinced that the key to solving intractable problems of all kinds involves moving my legs.
     </Typography>,
     <Typography
         style={{textAlign: "justify"}}

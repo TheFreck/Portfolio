@@ -113,6 +113,24 @@ export const nonFiction = [
         ]
     },
     {
+        title: "Man's Search For Meaning",
+        author: "Viktor E. Frankl",
+        thoughts: [
+            <Typography>
+                What does it mean to live a good life? How do we find meaning in a world where suffering is inflicted through negligence as well as intentional and intentionally senseless cruelty? Overcoming life's obstacles can be due to the rider or the horse but what if the horse we find ourselves riding is the Holocaust?
+            </Typography>,
+            <Typography>
+                <a href="https://www.goodreads.com/book/show/4069.Man_s_Search_for_Meaning" target="_blank" >This</a> is not an easy read by any means. I don't mean that he uses big words to describe some of the most barbaric atrocities to have been captured by history. The cruelty he describes was administered in a very calculated and systematic way designed to strip every vestige of humanity from people whose only crime was their birth. His language mirrors this systematic calculatioan in a way that delivers his ideas as well as drives home the senselessness of the tragedies.
+            </Typography>,
+            <Typography>
+                Dr. Frankl embarks on a journey to find life's meaning. In this quest he found the motivation to get up again and again to face the meaninglessness of life. The central realization is that <b><em>the meaning of life is the search for the meaning of life</em></b>. This point cannot be overstated. If the universe is cold and apathetic to our existence that leaves it to you and me to decide what has meaning and what doesn't. What does it mean to win at life if meaning is self imposed on a meaningless canvas? Finding meaning cannot truly occur without embracing the meaningless. Such contradictions are necessary and have parallels to other great thinkers such as Kurt G&ouml;del (<a href="https://en.wikipedia.org/wiki/G%C3%B6del%27s_incompleteness_theorems" target="_blank">the Incompleteness Theorem</a>) and Alan Turing (<a href="https://en.wikipedia.org/wiki/Halting_problem">the Halting Problem)</a>. 
+            </Typography>,
+            <Typography>
+                Again, it is not the concepts nor the language that make this such a difficult read, rather the direct realization of humans' capacity for such horrific cruelty. But from this decomposing morality he finds the compost to grow the most beautiful empathy translating suffering into meaning.
+            </Typography>
+        ]
+    },
+    {
         title: "Why Fish Don't Exist: A Story of Loss, Love, and the Hidden Order of Life",
         author: "Lulu Miller",
         thoughts: [
@@ -121,15 +139,6 @@ export const nonFiction = [
             </Typography>,
             <Typography>
                 The reason this book is so much more than a history of a controversial taxonomist is clear when she discusses categories. Is a lung fish a fish? It has more in common biologically with a cow than a tuna. We know that dolphins and whales are not fish yet somebody not yet familiar with our classification of mammals might not understand the difference at first. In other words, classifications are not objective and are useful in their context. However, a different classification regime might be more useful in the long run.
-            </Typography>
-        ]
-    },
-    {
-        title: "The Signal and the Noise: Why So Many Predictions Fail - But Some Don't",
-        author: "Nate Silver",
-        thoughts: [
-            <Typography>
-                <a href="https://www.goodreads.com/book/show/13588394-the-signal-and-the-noise" target="_blank">The future is not yet determined</a> (at least as far as you and I are concerned) yet there are signs that can be read if they can be separated from the noise. From market analysts to political prognosticators successful forecasters have certain tools at their disposal such as Econometrics and certain blindspots that can be avoided such as overconfidence.
             </Typography>
         ]
     },
@@ -241,6 +250,15 @@ export const nonFiction = [
         ]
     },
     {
+        title: "The Signal and the Noise: Why So Many Predictions Fail - But Some Don't",
+        author: "Nate Silver",
+        thoughts: [
+            <Typography>
+                <a href="https://www.goodreads.com/book/show/13588394-the-signal-and-the-noise" target="_blank">The future is not yet determined</a> (at least as far as you and I are concerned) yet there are signs that can be read if they can be separated from the noise. From market analysts to political prognosticators successful forecasters have certain tools at their disposal such as Econometrics and certain blindspots that can be avoided such as overconfidence.
+            </Typography>
+        ]
+    },
+    {
         title: "A Most Elegant Equation",
         author: "David Stipp *",
         thoughts: [
@@ -264,15 +282,6 @@ export const nonFiction = [
         thoughts: [
             <Typography>
                 How holography helps explain this thing we're all experiencing
-            </Typography>
-        ]
-    },
-    {
-        title: "Man's Search For Meaning",
-        author: "Viktor E. Frankl *",
-        thoughts: [
-            <Typography>
-                The meaning of life is the search for the meaning of life
             </Typography>
         ]
     },

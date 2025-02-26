@@ -3,7 +3,7 @@ import edge from "../assets/profileImages/onTheEdge.jpg";
 import summit from "../assets/profileImages/summit.jpg";
 import timp from "../assets/profileImages/timp.jpg";
 
-export const Photos = () => {
+export const HikingPhotos = () => {
     const hikingPhotos = [
         {
             im:<img src={edge} style={{width: "20vw", overflow: "hidden"}} alt="perching on the edge of a cliff on the way to the top of Timpanogos" />,
@@ -50,4 +50,4 @@ export const Photos = () => {
     </Box>
 }
 
-export default Photos;
+export default HikingPhotos;

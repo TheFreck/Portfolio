@@ -83,6 +83,7 @@ export default [
         summary: <Typography><strong>Phanindra Chandraprakash</strong> - Senior QE Automation Engineer - Worked together at Packsize</Typography>,
         body: [<Typography>
                 "I have enjoyed working with Chris for a little over two years. Our teams worked closely to help build various pieces of the larger software. I have participated in many software mob sessions with him, and I found him <b>hard-working</b>, <b>open-minded</b>, <b>humble</b>, and a <b>skilled communicator</b>. I like his <b>wit</b> and sense of humor, and he is a spiritual person and always brings up a <b>different perspective</b> during many non-tech discussions, which comes as a fresh breath of air. But what makes him unique is his <b>willingness to learn new things quickly and to help others</b>. I am glad to have worked with him and have no hesitation in recommending him to potential employers."
-            </Typography>]
+            </Typography>
+        ]
     }
 ]
