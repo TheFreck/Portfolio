@@ -1,12 +1,10 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import AboutMe from "./AboutMe";
-import { useFrame, useLoader } from "@react-three/fiber";
+import { useLoader } from "@react-three/fiber";
 import about from "../assets/profileImages/aboutMe.png";
 import endorse from "../assets/profileImages/endorsements.png";
 import proj from "../assets/profileImages/projects.png";
-import reading from "../assets/profileImages/ReadingList.png";
-import { OrbitControls } from "@react-three/drei";
+import reading from "../assets/profileImages/readingList.png";
 
 export const HomeMadeBox = ({setView,viewEnum}) => {
     const rightRef = useRef();
