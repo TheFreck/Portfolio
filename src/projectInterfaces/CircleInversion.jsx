@@ -1,11 +1,18 @@
 import { Paper, Tooltip, Typography } from "@mui/material"
 import line45 from "../assets/profileImages/line45.png";
 import invertedLine from "../assets/profileImages/invertedLine.png";
+import EventTracker from "../EventTracker";
+import { useEffect } from "react";
 
 const diagonalLine = <img src={line45} />;
 const inverted = <img src={invertedLine} />;
 
 export const CircleInversion = () => {
+    const tracker = EventTracker("interface CircleInversion");
+    useEffect(() => {
+        tracker("description for CircleInversion");
+    })
+    const LinkTo = () => <a href="https://thefreck.github.io/Circle_Inversion/" target="_blank" onClick={() => tracker("visit project CircleInversions")}>Circle Inversion</a>;
 
     return (
         <Paper
@@ -17,7 +24,7 @@ export const CircleInversion = () => {
             <Typography
                 variant="h4"
             >
-                <a href="https://thefreck.github.io/Circle_Inversion/" target="_blank" >Circle Inversion</a>
+                <LinkTo />
             </Typography>
             <hr/>
             <Typography

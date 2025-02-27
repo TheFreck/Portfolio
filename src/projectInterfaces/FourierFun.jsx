@@ -1,6 +1,14 @@
 import { Box, Paper, Typography } from "@mui/material"
+import EventTracker from "../EventTracker";
+import { useEffect } from "react";
 
 export const FourierFun = () => {
+    const tracker = EventTracker("interface FourierFun");
+    useEffect(() => {
+        tracker("description for FourierFun");
+    },[]);
+    
+    const LinkTo = () => <a href="https://thefreck.github.io/Fourier_Fun_p5.js/" target="_blank" onClick={() => tracker("visit project FourierFun")}>Fourier Series</a>;
 
     return <Paper
         sx={{
@@ -11,7 +19,7 @@ export const FourierFun = () => {
         <Typography
             variant="h4"
         >
-            <a href="https://thefreck.github.io/Fourier_Fun_p5.js/" target="_blank">Fourier Series</a>
+            <LinkTo />
         </Typography>
         <Typography
             variant="h6"

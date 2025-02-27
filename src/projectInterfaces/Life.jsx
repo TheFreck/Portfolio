@@ -1,6 +1,13 @@
 import { Box, Paper, Typography } from "@mui/material";
+import EventTracker from "../EventTracker";
+import { useEffect } from "react";
 
 export const Life = () => {
+    const tracker = EventTracker("interface Life");
+    useEffect(() => {
+        tracker("description for Life");
+    },[]);
+    const LinkTo = () => <a href="https://thegameoflifeserver20250114123040.azurewebsites.net" target="_blank" onClick={() => tracker("visit project Life")}>John Conway's Game of Life</a>;
 
     return (
         <Paper
@@ -11,7 +18,7 @@ export const Life = () => {
             <Typography
                 variant="h4"
             >
-                <a href="https://thegameoflifeserver20250114123040.azurewebsites.net" target="_blank" >John Conway's Game of Life</a>
+                <LinkTo />
             </Typography>
             <hr/>
             <Typography

@@ -1,6 +1,13 @@
 import { Paper, Typography } from "@mui/material";
+import EventTracker from "../EventTracker";
+import { useEffect } from "react";
 
 export const SolarSystem = () => {
+    const tracker = EventTracker("interface for SolarSystem");
+    useEffect(() => {
+        tracker("description for SolarSystem");
+    },[]);
+    const LinkTo = () => <a href="https://thefreck.github.io/SolarSystem/" target="_blank" onClick={() => tracker("visit project SolarSystem")}>Solar System Simulator</a>;
 
     return <Paper 
         sx={{
@@ -10,7 +17,7 @@ export const SolarSystem = () => {
         <Typography
             variant="h4"
         >
-            <a href="https://thefreck.github.io/SolarSystem/" target="_blank">Solar System Simulator</a>
+            <LinkTo />
         </Typography>
         <hr/>
         <Typography

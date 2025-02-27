@@ -1,6 +1,13 @@
 import { Paper, Typography } from "@mui/material";
+import EventTracker from "../EventTracker";
+import { useEffect } from "react";
 
 export const FreckExchange = () => {
+    const tracker = EventTracker("interface freckExchange");
+    useEffect(() => {
+        tracker("descriptino for freckExchange");
+    })
+    const LinkTo = () => <a href="https://thefreckexchange-cvgkagadbkcedyfm.westus-01.azurewebsites.net" target="_blank" onClick={() => tracker("visit project freckExchange")}>TheFreck Exchange</a>;
 
     return <Paper
         sx={{
@@ -10,7 +17,7 @@ export const FreckExchange = () => {
         <Typography
             variant="h4"
         >
-            <a href="https://thefreckexchange-cvgkagadbkcedyfm.westus-01.azurewebsites.net" target="_blank" >TheFreck Exchange</a>
+            <LinkTo />
         </Typography>
         <hr/>
         <Typography

@@ -1,7 +1,13 @@
 import { Paper, Typography } from "@mui/material";
 import x5Nozomi from "../assets/profileImages/x5Nozomi.png";
+import EventTracker from "../EventTracker";
+import { useEffect } from "react";
 
 export const X5wP = () => {
+    const tracker = EventTracker("interface for X5wP");
+    useEffect(() => {
+        tracker("descriptino for X5wP");
+    },[]);
     
     return (
     <Paper
@@ -13,7 +19,7 @@ export const X5wP = () => {
         <Typography
             variant="h4"
         >
-            <img height="40" src={x5Nozomi} /> from <a href="https://www.packsize.com/" target="_blank"><img src="https://cdn.prod.website-files.com/63ed685119ed692cd8c428f2/63ed6bbabae7167cdb27e8a8_packsize_no_tagline_3C.svg" height="30" alt="Packsize Logo" /></a> and <a href="https://www.efi.com/" target="_blank"><img height="30" src="https://www.efi.com/wp-content/uploads/sites/2/2023/07/efi-logo.svg" alt="EFI Logo"/></a>
+            <img height="40" src={x5Nozomi} /> from <a href="https://www.packsize.com/" target="_blank" onClick={() => tracker("sent traffic to Packsize")}><img src="https://cdn.prod.website-files.com/63ed685119ed692cd8c428f2/63ed6bbabae7167cdb27e8a8_packsize_no_tagline_3C.svg" height="30" alt="Packsize Logo" /></a> and <a href="https://www.efi.com/" target="_blank" onClick={() => tracker("sent traffic to EFI")}><img height="30" src="https://www.efi.com/wp-content/uploads/sites/2/2023/07/efi-logo.svg" alt="EFI Logo"/></a>
         </Typography>
         <hr/>
         <Typography
@@ -31,10 +37,11 @@ export const X5wP = () => {
         <Typography
             variant="h6"
         >
-            For more information about the project read the <a href="https://www.prnewswire.com/news-releases/packsize-and-efi-launch-x5-nozomi-the-industrys-first-full-color-erected-box-solution-302155692.html" target="_blank">press release</a> and watch the <a
+            For more information about the project read the <a href="https://www.prnewswire.com/news-releases/packsize-and-efi-launch-x5-nozomi-the-industrys-first-full-color-erected-box-solution-302155692.html" target="_blank" onClick={() => tracker("visit x5wPrint press release")}>press release</a> and watch the <a
             href="https://www.youtube.com/watch?v=_6OFLXDnSoc"
             alt="X5 with Print"
             target="_blank"
+            onClick={() => tracker("visit x5wPrint video")}
         >
             marketing video
         </a>. You'll be glad you did!

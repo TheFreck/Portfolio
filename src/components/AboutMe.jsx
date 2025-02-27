@@ -1,14 +1,21 @@
 import { Grid2, Paper, Tooltip, Typography } from "@mui/material";
-import react, { useState } from "react";
+import react, { useEffect, useState } from "react";
 import side from "../assets/profileImages/side.jpg";
 import hatTip from "../assets/profileImages/hatTip.jpg";
 import bigSmile from "../assets/profileImages/bigSmile.jpg";
 import hatSmile from "../assets/profileImages/hatSmile.jpg";
 import hatSmile2 from "../assets/profileImages/hatSmile2.jpg";
 import content from "../content/AboutMeContent";
+import EventTracker from "../EventTracker";
 
 export const AboutMe = () => {
+    const tracker = EventTracker("About Me");
     const [imageClick, setImageClick] = useState(0);
+
+    useEffect(() => {
+        tracker("about me page");
+    },[]);
+
     const profileImages = [
         hatSmile,
         hatSmile2,

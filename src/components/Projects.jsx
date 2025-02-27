@@ -1,15 +1,21 @@
 import { Box, Button, Grid2, IconButton, ImageList, ImageListItem, ImageListItemBar, Link, Modal, Paper, Tooltip } from "@mui/material";
-import react, { useRef, useState } from "react";
+import react, { useEffect, useRef, useState } from "react";
 import Primes from "../projectInterfaces/Primes";
 import CloseIcon from '@mui/icons-material/Close';
 import projects from "../content/ProjectsContent";
 import InfoIcon from '@mui/icons-material/Info';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import EventTracker from "../EventTracker";
 
 export const Projects = () => {
+    const tracker = EventTracker("Projects");
     const [open, setOpen] = useState(false);
     const [current, setCurrent] = useState(<Primes />);
     const modalRef = useRef();
+
+    useEffect(() =>{
+        tracker("projects page");
+    },[]);
 
     return <Box
         sx={{
@@ -42,18 +48,20 @@ export const Projects = () => {
                             onClick={() => {
                                 setCurrent(p.project.link)
                                 setOpen(true);
+                                tracker(`read about project ${p.project.title}`);
                             }}
                         />
                         <Link 
                             href={p.project.repo} 
                             target="_blank"
+                            onClick={() => tracker(`go to repo ${p.project.title}`)}
                         >
                             <ImageListItemBar
                                 title={p.title}
                                 subtitle="View Repo"
                                 actionIcon={
                                     <IconButton>
-                                        <InfoIcon />
+                                        <GitHubIcon />
                                     </IconButton>
                                 }
                             >

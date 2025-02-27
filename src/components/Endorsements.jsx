@@ -1,9 +1,14 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Container, Paper, Typography } from "@mui/material";
-import react, { useState } from "react";
+import react, { useEffect, useState } from "react";
 import endorsements from "../content/EndorsementContent";
+import EventTracker from "../EventTracker";
 
 export const Endorsements = () => {
+    const tracker = EventTracker("endorsements page");
     const [expanded,setExpanded] = useState("default");
+    useEffect(() => {
+        tracker("view endorsements");
+    },[]);
 
     return <Box
         sx={{

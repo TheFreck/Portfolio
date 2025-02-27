@@ -1,9 +1,14 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Container, Paper, Typography } from "@mui/material";
-import react, { useState } from "react";
+import react, { useEffect, useState } from "react";
 import {fiction,nonFiction} from "../content/ReadingListContent";
+import EventTracker from "../EventTracker";
 
 export const ReadingList = () => {
+    const tracker = EventTracker("reading list page");
     const [expanded,setExpanded] = useState("default");
+    useEffect(() => {
+        tracker("view reading list");
+    },[]);
 
     return <>
         <Box

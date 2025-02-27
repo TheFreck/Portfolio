@@ -1,6 +1,14 @@
 import { Box, Paper, Typography } from "@mui/material";
+import EventTracker from "../EventTracker";
+import { useEffect } from "react";
 
 export const BubbleTrader = () => {
+    const tracker = EventTracker("interface BubbleTrader");
+    useEffect(() => {
+        tracker("description for BubbleTrader");
+    },[]);
+
+    const LinkTo = () => <a href="https://bubbletraderserver20250122211424.azurewebsites.net/" target="_blank" onClick={tracker("visit project BubbleTrader")}>Bubble Trader</a>;
 
     return <Paper
         sx={{
@@ -11,7 +19,7 @@ export const BubbleTrader = () => {
         <Typography
             variant="h4"
         >
-            <a href="https://bubbletraderserver20250122211424.azurewebsites.net/" target="_blank">Bubble Trader</a>
+            <LinkTo />
         </Typography>
         <hr/>
         <Typography
@@ -29,7 +37,7 @@ export const BubbleTrader = () => {
         <Typography
             variant="h6"
         >
-            <a href="https://bubbletraderserver20250122211424.azurewebsites.net/" target="_blank">Bubble Trader</a> is an exploration into the chaos that drives asset markets. In it's MVP stage the stock price is determined by bubbles bouncing around inside a rectangle. Each bubble is created with an internal risk tolerance in the form of a value between 0-1. With each collision it compares the bubbles risk tolerance against a random number generated on the fly. Depending on the relative desire of each bubble to buy or sell the stock the price is pushed upward or downward. The stock chart is then updated with the current price.
+            <LinkTo /> is an exploration into the chaos that drives asset markets. In it's MVP stage the stock price is determined by bubbles bouncing around inside a rectangle. Each bubble is created with an internal risk tolerance in the form of a value between 0-1. With each collision it compares the bubbles risk tolerance against a random number generated on the fly. Depending on the relative desire of each bubble to buy or sell the stock the price is pushed upward or downward. The stock chart is then updated with the current price.
         </Typography>
         <br/>
         <Typography

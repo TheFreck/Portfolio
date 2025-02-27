@@ -1,15 +1,23 @@
 import { Button, FormControl, FormControlLabel, Grid2, Paper, Switch, TextField, Typography } from "@mui/material";
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
+import { v4 as uuid } from "uuid";
+import EventTracker from "../EventTracker";
 
 export const Primes = () => {
+    const visitId = uuid();
+    const tracker = EventTracker(`interface for Primes page visit id: ${visitId}`);
     const [low,setLow] = useState(0);
     const [qty,setQty] = useState(0);
     const [primes,setPrimes] = useState([]);
     const [primesArray, setPrimesArray] = useState([]);
     const [orderVertical,setOrderVertical] = useState(true);
+    useEffect(() => {
+        tracker(`description for Primes visit id: ${visitId}`);
+    },[]);
     
     const getPrimes = async () => {
+        tracker(`get primes low: ${low}, qty: ${qty}, ${orderVertical ? "vertical" : "horizontal"} visit id: ${visitId}`);
         axios.get(`https://primestreaming.azurewebsites.net/Primes/${low}/${qty}`)
         .then(yup => {
             setPrimes(yup.data);
@@ -52,7 +60,7 @@ export const Primes = () => {
             formatted = <Grid2
                 container
                 size={12}
-                sx={{display: "flex", flexDirection: "row"}}
+                sx={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}
             >
                 <Grid2
                     size={3}
@@ -110,7 +118,7 @@ export const Primes = () => {
             formatted = <Grid2
                 container
                 size={12}
-                sx={{display: "flex", flexDirection: "row"}}
+                sx={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}
             >
                 <Grid2
                     size={4}
@@ -155,7 +163,7 @@ export const Primes = () => {
             formatted = <Grid2
                 container
                 size={12}
-                sx={{display: "flex", flexDirection: "row"}}
+                sx={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}
             >
                 <Grid2>
                     {
@@ -176,7 +184,7 @@ export const Primes = () => {
         else{
             formatted = <Grid2
                 container
-                sx={{display: "flex", flexDirection: "row"}}
+                sx={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}
                 size={12}
             >
                 {primes.map((p,i) => (
@@ -193,7 +201,7 @@ export const Primes = () => {
             // 4 columns
             formatted = <Grid2
                 container
-                sx={{display: "flex", flexDirection: "row"}}
+                sx={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}
                 size={12}
             >
                 {
@@ -207,7 +215,7 @@ export const Primes = () => {
             // 3 columns
             formatted = <Grid2
                 container
-                sx={{display: "flex", flexDirection: "row"}}
+                sx={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}
                 size={12}
             >
                 {
@@ -221,7 +229,7 @@ export const Primes = () => {
             // 2 columns
             formatted = <Grid2
                 container
-                sx={{display: "flex", flexDirection: "row"}}
+                sx={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}
                 size={12}
             >
                 {
@@ -235,10 +243,13 @@ export const Primes = () => {
             formatted = <Grid2
             data-grid
                 size={12}
+                sx={{display: "flex", justifyContent: "space-evenly"}}
             >
                 {
                     primes.map((p,i) => (
-                        <Grid2 size={12} key={i}><Typography>{p}</Typography></Grid2>
+                        <Grid2 size={12} key={i}>
+                            <Typography>{p}</Typography>
+                        </Grid2>
                     ))
                 }
             </Grid2> 
