@@ -8,3 +8,5 @@ This is a small selection of my projects. There are many more that still need an
 I really wanted to include this section because I have been finding some really great books lately that have enriched my thinking so much. This is the same mind I apply to software development and so if you want to get an idea of how I approach coding problems take a look.
 ### Endorsements
 I have had the extreme pleasure of working and collaborating with some amazing engineers, software managers and project managers. I would vouch for any and all of the people in this section. The fact that they would vouch for me is humbling to say the least!
+### Home
+The bonus fifth section is a 3D cube with an image of each section on one of its horizontal sides. Clicking on a side will navigate to the corresponding page.
