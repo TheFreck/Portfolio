@@ -3,12 +3,18 @@ import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls } from '@react-three/drei';
 import { useEffect, useRef, useState } from "react";
 import HomeMadeBox from "./HomeMadeBox";
+import EventTracker from "../EventTracker";
 
 export const AboutThree = ({setView,viewEnum}) => {
+    const tracker = EventTracker("AboutThree page");
     const [aspectWidth, setAspectWidth] = useState(200);
     const [aspectHeight, setAspectHeight] = useState(100);
     const [cameraNear, setCameraNear] = useState(1);
     const [cameraFar, setCameraFar] = useState(1000);
+
+    useEffect(() =>{
+      tracker("view AboutThree");
+    },[]);
 
     return (
       <div id="canvas-container">

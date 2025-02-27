@@ -5,8 +5,12 @@ import about from "../assets/profileImages/aboutMe.png";
 import endorse from "../assets/profileImages/endorsements.png";
 import proj from "../assets/profileImages/projects.png";
 import reading from "../assets/profileImages/readingList.png";
+import hat from "../assets/profileImages/bowler.jpg";
+import shoes from "../assets/profileImages/shoes.png";
+import EventTracker from "../EventTracker";
 
 export const HomeMadeBox = ({setView,viewEnum}) => {
+    const tracker = EventTracker("HomeMadeBox page");
     const rightRef = useRef();
     const leftRef = useRef();
     const topRef = useRef();
@@ -15,17 +19,22 @@ export const HomeMadeBox = ({setView,viewEnum}) => {
     const backRef = useRef();
     const boxRef = useRef();
 
+    const top = useLoader(THREE.TextureLoader,[hat]);
     const right = useLoader(THREE.TextureLoader,[endorse]);
     const front = useLoader(THREE.TextureLoader, [about]);
     const left = useLoader(THREE.TextureLoader, [reading]);
     const back = useLoader(THREE.TextureLoader, [proj]);
+    const bottom = useLoader(THREE.TextureLoader, [shoes]);
+
 
     useEffect(() => {
+        tracker("view HomeMadeBox");
         leftRef.current.rotation.y = 3*Math.PI/2;
         rightRef.current.rotation.y = Math.PI/2;
         topRef.current.rotation.x = Math.PI/2;
         bottomRef.current.rotation.x = Math.PI/2;
         backRef.current.rotation.y = Math.PI;
+        topRef.current.rotation.z = Math.PI;
     },[]);
 
     return (
@@ -35,7 +44,10 @@ export const HomeMadeBox = ({setView,viewEnum}) => {
             <mesh
                 ref={rightRef}
                 position={[5,0,0]}
-                onClick={() => setView(viewEnum.endorsements)}
+                onClick={() => {
+                    tracker("visit endorsements from homeMadeBox");
+                    setView(viewEnum.endorsements);
+                }}
             >
                 <planeGeometry
                     args={[10,10]}
@@ -48,7 +60,10 @@ export const HomeMadeBox = ({setView,viewEnum}) => {
             <mesh
                 ref={leftRef}
                 position={[-5,0,0]}
-                onClick={() => setView(viewEnum.books)}
+                onClick={() => {
+                    tracker("visit readingList from homeMadeBox");
+                    setView(viewEnum.books);
+                }}
             >
                 <planeGeometry
                     args={[10,10]}
@@ -66,7 +81,7 @@ export const HomeMadeBox = ({setView,viewEnum}) => {
                     args={[10,10]}
                 />
                 <meshStandardMaterial
-                    color="blue"
+                    map={top[0]}
                     side={THREE.DoubleSide}
                 />
             </mesh>
@@ -78,14 +93,17 @@ export const HomeMadeBox = ({setView,viewEnum}) => {
                     args={[10,10]}
                 />
                 <meshStandardMaterial
-                    color="yellow"
+                    map={bottom[0]}
                     side={THREE.DoubleSide}
                 />
             </mesh>
             <mesh
                 ref={frontRef}
                 position={[0,0,5]}
-                onClick={() => setView(viewEnum.about)}
+                onClick={() => {
+                    tracker("visit aboutMe from homeMadeBox");
+                    setView(viewEnum.about);
+                }}
             >
                 <planeGeometry
                     args={[10,10]}
@@ -98,7 +116,10 @@ export const HomeMadeBox = ({setView,viewEnum}) => {
             <mesh
                 ref={backRef}
                 position={[0,0,-5]}
-                onClick={() => setView(viewEnum.projects)}
+                onClick={() => {
+                    tracker("visit projects from homeMadeBox");
+                    setView(viewEnum.projects);
+                }}
             >
                 <planeGeometry
                     args={[10,10]}
