@@ -11,21 +11,30 @@ export const Endorsements = ({isMobile}) => {
 
     useEffect(() => {
         tracker("view endorsements");
-        console.log("loading endorsements");
     },[]);
+    
+    useEffect(() => {
+        document.getElementById(expanded)?.scrollIntoView();
+    },[expanded]);
 
-    const Mobile = () => <Box
+    const Mobile = () => <Container
         sx={{
             width: "100vw",
             margin: "auto",
+            paddingLeft: 0,
+            paddingRight: 0,
+            overflowY: "auto",
+            height: "100vh",
+            paddingBottom: "10vh"
         }}
     >
+        <Box>
         {
             endorsements && endorsements.map((e, i) => (
                 <Accordion 
                     key={i}
                     sx={{
-                        marginBottom: "1vh"
+                            marginBottom: "1vh"
                     }}
                     expanded={expanded === `panel${i}`}
                     onChange={() => expanded !== `panel${i}` ? setExpanded(`panel${i}`) : setExpanded("default")}
@@ -39,11 +48,9 @@ export const Endorsements = ({isMobile}) => {
                                 <Container 
                                     key={j}
                                     sx={{
-                                        width: "95vw",
                                         margin: "auto",
                                         lineHeight: 2,
                                         textAlign: "justify",
-                                        marginBottom: "3vh"
                                     }}
                                 >
                                     {j===0 && <hr/>}
@@ -55,14 +62,15 @@ export const Endorsements = ({isMobile}) => {
                 </Accordion>
             ))
         }
-    </Box>;
+        </Box>
+    </Container>;
 
-    const Desktop = () => <Box
+    const Desktop = () => <Container
         sx={{
-            width: "60vw",
-            margin: "auto",
-            minHeight: "90vh",
-            overflowY: "auto"
+            overflowY: "auto",
+            overflowX: "hidden",
+            height: "90vh",
+            paddingBottom: "10vh"
         }}
     >
         {
@@ -84,7 +92,9 @@ export const Endorsements = ({isMobile}) => {
                         }
                     }}
                 >
-                    <AccordionSummary>
+                    <AccordionSummary
+                        id={`panel${i}`}
+                    >
                         {e.summary}
                     </AccordionSummary>
                     <AccordionDetails>
@@ -109,7 +119,7 @@ export const Endorsements = ({isMobile}) => {
                 </Accordion>
             ))
         }
-    </Box>
+    </Container>
 
     return <Box>
         {

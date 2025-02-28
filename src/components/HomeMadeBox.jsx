@@ -28,7 +28,6 @@ export const HomeMadeBox = ({setView,viewEnum, isMobile}) => {
 
 
     useEffect(() => {
-        tracker("view HomeMadeBox");
         leftRef.current.rotation.y = 3*Math.PI/2;
         rightRef.current.rotation.y = Math.PI/2;
         topRef.current.rotation.x = Math.PI/2;

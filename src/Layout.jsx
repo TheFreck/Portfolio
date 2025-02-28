@@ -16,7 +16,7 @@ const viewEnum = {
 }
 
 export const Layout = () => {
-    const [view,setView] = useState(viewEnum.about);
+    const [view, setView] = useState(viewEnum.about);
     const [isMobile, setIsMobile] = useState(false);
     const minSwipeDistance = 100;
     const touchRef = useRef();
@@ -27,15 +27,15 @@ export const Layout = () => {
             touchEnd: null
         };
         window.onresize = () => {
-            if(!isMobile && window.innerWidth <= 800){
+            if (!isMobile && window.innerWidth <= 800) {
                 setIsMobile(true);
             }
             else
-            if(isMobile && window.innerWidth > 800){
-                setIsMobile(false);
-            }
+                if (isMobile && window.innerWidth > 800) {
+                    setIsMobile(false);
+                }
         }
-    },[]);
+    }, []);
 
     const onTouchStart = (e) => {
         touchRef.current.touchStart = e.targetTouches[0].clientX;
@@ -47,42 +47,50 @@ export const Layout = () => {
     }
 
     const onTouchEnd = (e) => {
-        if(view === 0) return;
-        if(!touchRef.current.touchStart || !touchRef.current.touchEnd) return;
+        if (view === 0) return;
+        if (!touchRef.current.touchStart || !touchRef.current.touchEnd) return;
         const distance = touchRef.current.touchEnd - touchRef.current.touchStart;
-        if(distance > minSwipeDistance){
-            setView(((view+5)-1)%5)
+        if (distance > minSwipeDistance) {
+            setView(((view + 5) - 1) % 5)
         }
         else
-        if(distance < -minSwipeDistance){
-            setView((view+1)%5);
-        }
+            if (distance < -minSwipeDistance) {
+                setView((view + 1) % 5);
+            }
     }
 
-    const LayoutCallback = useCallback(() => <Box 
-            data-name="box" 
-            onTouchStart={onTouchStart}
-            onTouchEnd={onTouchEnd}
-            onTouchMove={onTouchMove}
+    const LayoutCallback = useCallback(() => <Box
+        data-name="box"
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+        onTouchMove={onTouchMove}
+        sx={{
+            flexGrow: 1,
+            margin: "0 !important",
+            padding: "0 !important",
+            width: "100vw !important",
+            height: "100vh",
+            background: "black"
+        }}
+    >
+
+        <AppBar
             sx={{
-                flexGrow:1, 
-                margin: 0, 
-                padding: 0, 
-                width: "100vw",
+                width: "100vw !important",
+                margin: "0 !important",
+                padding: "0 !important",
+                height: "20vh !important",
+                background: "#adadad"
             }}
-        >
-            
-        <AppBar 
-            position="sticky"
-            sx={{width: "100vw", margin: 0, padding: 0, height: "20% !important", background: "#adadad"}}
             data-name="appbar"
         >
-            <Toolbar variant="dense" data-name="toolbar" 
+            <Toolbar variant="dense" data-name="toolbar"
                 sx={{
-                    width: "100vw",
+                    width: "100vw !important",
                     height: isMobile ? "10vh" : "2vh",
-                    paddingTop: "2vh",
-                    margin: 0
+                    paddingTop: "2vh !important",
+                    paddingBottom: "2vh !important",
+                    margin: "0 !important"
                 }}
             >
                 <Grid2 container size={12}
@@ -93,65 +101,84 @@ export const Layout = () => {
 
                     }}
                 >
-                    <Grid2 size={isMobile ? (view === viewEnum.home ? 4 : 2) : 2}>
-                        <Typography
-                            sx={{
-                                cursor: "pointer",
-                                fontSize: isMobile ? (view === viewEnum.home ? "6vw" : "3vw") : "1vw",
-                            }}
-                            onClick={() => !isMobile ? setView(viewEnum.home) : ""}
-                        >
-                            Home
-                        </Typography>
-                    </Grid2>
-                    <Grid2 size={isMobile ? (view === viewEnum.about ? 4 : 2) : 2}>
-                        <Typography
-                            sx={{
-                                cursor: "pointer",
-                                fontSize: isMobile ? (view === viewEnum.about ? "6vw" : "3vw") : "1vw"
-                            }}
-                            onClick={() => !isMobile ? setView(viewEnum.about) : ""}
-                        >
-                            About Me
-                        </Typography>
-                    </Grid2>
-                    <Grid2 size={isMobile ? (view === viewEnum.projects ? 4 : 2) : 2}>
-                        <Typography
-                            sx={{
-                                cursor: "pointer",
-                                fontSize: isMobile ? (view === viewEnum.projects ? "6vw" : "3vw") : "1vw"
-                            }}
-                            onClick={() => !isMobile ? setView(viewEnum.projects) : ""}
-                        >
-                            Projects
-                        </Typography>
-                    </Grid2>
-                    <Grid2 size={isMobile ? (view === viewEnum.books ? 4 : 2) : 2}>
-                        <Typography
-                            sx={{
-                                cursor: "pointer",
-                                fontSize: isMobile ? (view === viewEnum.books ? "5vw" : "3vw") : "1vw"
-                            }}
-                            onClick={() => !isMobile ? setView(viewEnum.books) : ""}
-                        >
-                            Reading List
-                        </Typography>
-                    </Grid2>
-                    <Grid2 size={isMobile ? (view === viewEnum.endorsements ? 4 : 2) : 2}>
-                        <Typography
-                            sx={{
-                                cursor: "pointer",
-                                fontSize: isMobile ? (view === viewEnum.endorsements ? "6vw" : "3vw") : "1vw"
-                            }}
-                            onClick={() => !isMobile ? setView(viewEnum.endorsements) : ""}
-                        >
-                            Endorsements
-                        </Typography>
-                    </Grid2>
+                    {
+                        !isMobile &&
+                        <Grid2 size={1.5}/>
+                    }
+                    {
+                        (!isMobile || (isMobile && view === viewEnum.home)) &&
+                        <Grid2 size={isMobile ? 12 : 2}>
+                            <Typography
+                                sx={{
+                                    cursor: "pointer",
+                                    fontSize: isMobile ? (view === viewEnum.home ? "8vw" : "3vw") : "1vw",
+                                }}
+                                onClick={() => !isMobile ? setView(viewEnum.home) : ""}
+                            >
+                                Home
+                            </Typography>
+                        </Grid2>
+                    }
+                    {
+                        (!isMobile || (isMobile && view === viewEnum.about)) &&
+                        <Grid2 size={isMobile ? 12 : 2}>
+                            <Typography
+                                sx={{
+                                    cursor: "pointer",
+                                    fontSize: isMobile ? (view === viewEnum.about ? "8vw" : "3vw") : "1vw"
+                                }}
+                                onClick={() => !isMobile ? setView(viewEnum.about) : ""}
+                            >
+                                About Me
+                            </Typography>
+                        </Grid2>
+                    }
+                    {
+                        (!isMobile || (isMobile && view === viewEnum.projects)) &&
+                        <Grid2 size={isMobile ? 12 : 2}>
+                            <Typography
+                                sx={{
+                                    cursor: "pointer",
+                                    fontSize: isMobile ? (view === viewEnum.projects ? "8vw" : "3vw") : "1vw"
+                                }}
+                                onClick={() => !isMobile ? setView(viewEnum.projects) : ""}
+                            >
+                                Projects
+                            </Typography>
+                        </Grid2>
+                    }
+                    {
+                        (!isMobile || (isMobile && view === viewEnum.books)) &&
+                        <Grid2 size={isMobile ? 12 : 2}>
+                            <Typography
+                                sx={{
+                                    cursor: "pointer",
+                                    fontSize: isMobile ? (view === viewEnum.books ? "8vw" : "3vw") : "1vw"
+                                }}
+                                onClick={() => !isMobile ? setView(viewEnum.books) : ""}
+                            >
+                                Reading List
+                            </Typography>
+                        </Grid2>
+                    }
+                    {
+                        (!isMobile || (isMobile && view === viewEnum.endorsements)) &&
+                        <Grid2 size={isMobile ? 12 : 2}>
+                            <Typography
+                                sx={{
+                                    cursor: "pointer",
+                                    fontSize: isMobile ? (view === viewEnum.endorsements ? "8vw" : "3vw") : "1vw"
+                                }}
+                                onClick={() => !isMobile ? setView(viewEnum.endorsements) : ""}
+                            >
+                                Endorsements
+                            </Typography>
+                        </Grid2>
+                    }
                 </Grid2>
             </Toolbar>
             {
-                view === viewEnum.home && 
+                view === viewEnum.home &&
                 <AboutThree setView={setView} viewEnum={viewEnum} isMobile={isMobile} />
             }{
                 view === viewEnum.about &&
@@ -170,7 +197,7 @@ export const Layout = () => {
                 <Endorsements isMobile={isMobile} />
             }
         </AppBar>
-    </Box>, [isMobile,view]);
+    </Box>, [isMobile, view]);
 
     return <LayoutCallback />
 }
