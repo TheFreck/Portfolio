@@ -48,7 +48,7 @@ export const AboutMe = ({isMobile}) => {
         />
         <Paper
             sx={{
-                padding: "2vw 0",
+                padding: "2vh 2vw",
                 overflowY: "scroll"
             }}
         >
