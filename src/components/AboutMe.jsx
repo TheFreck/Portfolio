@@ -26,7 +26,6 @@ export const AboutMe = ({isMobile}) => {
     ];
 
     const Mobile = () => <Paper
-        data-mobilePaper
         elevation={7}
         sx={{
             width: "100vw",
@@ -35,7 +34,6 @@ export const AboutMe = ({isMobile}) => {
             minHeight: "100vh",
         }}
     >
-        <div>scroll</div>
         <img 
             src={profileImages[imageClick]} 
             style={{
