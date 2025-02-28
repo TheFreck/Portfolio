@@ -16,8 +16,6 @@ import MusicPhotos from "../components/MusicPhotos";
 
 const goPositions = <p>1.74089650659 × 10<sup>172</sup> (that's 17,408,965,065,900,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000 ways of organizing stones on a board)</p>
 const totalAtoms = <p>10<sup>80</sup> (that's 100,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000 protons, electrons, neutrons and other particles in the visible universe!!!)</p>
-const timpanogos = <img src={timp} style={{width: "20vw", overflow: "hidden"}} />
-const banjoBack = <img src={banjoBacklight} style={{width: "20vw", overflow: "hidden"}} />
 const rubik2 = <img src={rubiks2} style={{width: "20vw"}} />
 const five3 = <img src={fiveThree} style={{width: "20vw"}} />
 const unGhost = <img src={unsolvedGhost} style={{width: "20vw"}} />

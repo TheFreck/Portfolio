@@ -18,7 +18,7 @@ const viewEnum = {
 export const Layout = () => {
     const [view,setView] = useState(viewEnum.about);
     const [isMobile, setIsMobile] = useState(false);
-    const minSwipeDistance = 50;
+    const minSwipeDistance = 100;
     const touchRef = useRef();
 
     useEffect(() => {
@@ -60,21 +60,18 @@ export const Layout = () => {
     }
 
     const LayoutCallback = useCallback(() => <Box 
-        data-name="box" 
-        onTouchStart={onTouchStart}
-        onTouchEnd={onTouchEnd}
-        onTouchMove={onTouchMove}
-        sx={{
-            flexGrow:1, 
-            margin: 0, 
-            padding: 0, 
-            height: "100vh", 
-            width: "100vw", 
-            overflow: "hidden"
+            data-name="box" 
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
+            onTouchMove={onTouchMove}
+            sx={{
+                flexGrow:1, 
+                margin: 0, 
+                padding: 0, 
+                width: "100vw",
             }}
         >
             
-            {console.log(isMobile ? (view === viewEnum.home ? "mobile home" : "mobile away") : "desktop")}
         <AppBar 
             position="sticky"
             sx={{width: "100vw", margin: 0, padding: 0, height: "20% !important", background: "#adadad"}}
@@ -84,7 +81,8 @@ export const Layout = () => {
                 sx={{
                     width: "100vw",
                     height: isMobile ? "10vh" : "2vh",
-                    paddingTop: "2vh"
+                    paddingTop: "2vh",
+                    margin: 0
                 }}
             >
                 <Grid2 container size={12}
@@ -101,7 +99,7 @@ export const Layout = () => {
                                 cursor: "pointer",
                                 fontSize: isMobile ? (view === viewEnum.home ? "6vw" : "3vw") : "1vw",
                             }}
-                            onClick={() => setView(viewEnum.home)}
+                            onClick={() => !isMobile ? setView(viewEnum.home) : ""}
                         >
                             Home
                         </Typography>
@@ -112,7 +110,7 @@ export const Layout = () => {
                                 cursor: "pointer",
                                 fontSize: isMobile ? (view === viewEnum.about ? "6vw" : "3vw") : "1vw"
                             }}
-                            onClick={() => setView(viewEnum.about)}
+                            onClick={() => !isMobile ? setView(viewEnum.about) : ""}
                         >
                             About Me
                         </Typography>
@@ -123,7 +121,7 @@ export const Layout = () => {
                                 cursor: "pointer",
                                 fontSize: isMobile ? (view === viewEnum.projects ? "6vw" : "3vw") : "1vw"
                             }}
-                            onClick={() => setView(viewEnum.projects)}
+                            onClick={() => !isMobile ? setView(viewEnum.projects) : ""}
                         >
                             Projects
                         </Typography>
@@ -134,7 +132,7 @@ export const Layout = () => {
                                 cursor: "pointer",
                                 fontSize: isMobile ? (view === viewEnum.books ? "5vw" : "3vw") : "1vw"
                             }}
-                            onClick={() => setView(viewEnum.books)}
+                            onClick={() => !isMobile ? setView(viewEnum.books) : ""}
                         >
                             Reading List
                         </Typography>
@@ -145,7 +143,7 @@ export const Layout = () => {
                                 cursor: "pointer",
                                 fontSize: isMobile ? (view === viewEnum.endorsements ? "6vw" : "3vw") : "1vw"
                             }}
-                            onClick={() => setView(viewEnum.endorsements)}
+                            onClick={() => !isMobile ? setView(viewEnum.endorsements) : ""}
                         >
                             Endorsements
                         </Typography>

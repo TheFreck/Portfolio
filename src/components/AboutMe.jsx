@@ -26,14 +26,16 @@ export const AboutMe = ({isMobile}) => {
     ];
 
     const Mobile = () => <Paper
+        data-mobilePaper
         elevation={7}
         sx={{
             width: "100vw",
             margin: "auto",
-            padding: "5vh 5vw",
-            overflowY: "auto"
+            overflowY: "scroll",
+            minHeight: "100vh",
         }}
     >
+        <div>scroll</div>
         <img 
             src={profileImages[imageClick]} 
             style={{
@@ -41,12 +43,16 @@ export const AboutMe = ({isMobile}) => {
                 borderRadius: "50%",
                 boxShadow: "10px 10px 15px gray",
                 marginLeft: 0,
-                marginTop: 0
+                marginTop: 0,
+                overflowY: "scroll"
             }}
-            onClick={() => setImageClick((imageClick + 1)%profileImages.length)}
+            onClick={() => !mobile ? setImageClick((imageClick + 1)%profileImages.length) : ""}
         />
         <Paper
-            sx={{padding: "2vw"}}
+            sx={{
+                padding: "2vw 0",
+                overflowY: "scroll"
+            }}
         >
             {
                 content && content.map((c,i) => (
@@ -62,7 +68,7 @@ export const AboutMe = ({isMobile}) => {
             width: "50vw",
             margin: "auto",
             padding: "5vh 5vw",
-            overflowY: "auto"
+            overflowY: "scroll"
         }}
     >
         <Grid2 

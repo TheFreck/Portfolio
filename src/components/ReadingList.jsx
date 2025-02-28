@@ -46,7 +46,7 @@ export const ReadingList = ({isMobile}) => {
                                         sx={{
                                             width: "95vw",
                                             margin: "auto",
-                                            padding: "5vw",
+                                            padding: "5vw 0",
                                             lineHeight: 2,
                                             textAlign: "justify",
                                             marginBottom: "3vh"
