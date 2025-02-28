@@ -26,15 +26,8 @@ export const Layout = () => {
             touchStart: null,
             touchEnd: null
         };
-        window.onresize = () => {
-            if (!isMobile && window.innerWidth <= 800) {
-                setIsMobile(true);
-            }
-            else
-                if (isMobile && window.innerWidth > 800) {
-                    setIsMobile(false);
-                }
-        }
+        if(navigator.maxTouchPoints > 0) setIsMobile(true);
+        else setIsMobile(false);
     }, []);
 
     const onTouchStart = (e) => {
