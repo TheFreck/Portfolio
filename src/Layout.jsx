@@ -17,7 +17,7 @@ const viewEnum = {
 
 export const Layout = () => {
     const [view, setView] = useState(viewEnum.about);
-    const [isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = useState(true);
     const minSwipeDistance = 100;
     const touchRef = useRef();
 
