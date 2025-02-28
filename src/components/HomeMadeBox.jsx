@@ -9,7 +9,7 @@ import hat from "../assets/profileImages/bowler.jpg";
 import shoes from "../assets/profileImages/shoes.png";
 import EventTracker from "../EventTracker";
 
-export const HomeMadeBox = ({setView,viewEnum}) => {
+export const HomeMadeBox = ({setView,viewEnum, isMobile}) => {
     const tracker = EventTracker("HomeMadeBox page");
     const rightRef = useRef();
     const leftRef = useRef();
@@ -50,7 +50,7 @@ export const HomeMadeBox = ({setView,viewEnum}) => {
                 }}
             >
                 <planeGeometry
-                    args={[10,10]}
+                    args={[10,isMobile ? 8 : 10]}
                 />
                 <meshStandardMaterial
                     map={right[0]}
@@ -66,7 +66,7 @@ export const HomeMadeBox = ({setView,viewEnum}) => {
                 }}
             >
                 <planeGeometry
-                    args={[10,10]}
+                    args={[10,isMobile ? 8 : 10]}
                 />
                 <meshStandardMaterial
                     map={left[0]}
@@ -75,7 +75,7 @@ export const HomeMadeBox = ({setView,viewEnum}) => {
             </mesh>
             <mesh
                 ref={topRef}
-                position={[0,5,0]}
+                position={[0,isMobile ? 4 : 5,0]}
             >
                 <planeGeometry
                     args={[10,10]}
@@ -87,7 +87,7 @@ export const HomeMadeBox = ({setView,viewEnum}) => {
             </mesh>
             <mesh
                 ref={bottomRef}
-                position={[0,-5,0]}
+                position={[0,isMobile ? -4 : -5,0]}
             >
                 <planeGeometry
                     args={[10,10]}
@@ -106,7 +106,7 @@ export const HomeMadeBox = ({setView,viewEnum}) => {
                 }}
             >
                 <planeGeometry
-                    args={[10,10]}
+                    args={[10,isMobile ? 8 : 10]}
                 />
                 <meshStandardMaterial
                     side={THREE.FrontSide}
@@ -122,7 +122,7 @@ export const HomeMadeBox = ({setView,viewEnum}) => {
                 }}
             >
                 <planeGeometry
-                    args={[10,10]}
+                    args={[10,isMobile ? 8 : 10]}
                 />
                 <meshStandardMaterial
                     map={back[0]}

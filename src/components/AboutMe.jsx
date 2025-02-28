@@ -1,5 +1,5 @@
-import { Grid2, Paper, Tooltip, Typography } from "@mui/material";
-import react, { useEffect, useState } from "react";
+import { Box, Grid2, Paper, Tooltip, Typography } from "@mui/material";
+import react, { useCallback, useEffect, useRef, useState } from "react";
 import side from "../assets/profileImages/side.jpg";
 import hatTip from "../assets/profileImages/hatTip.jpg";
 import bigSmile from "../assets/profileImages/bigSmile.jpg";
@@ -8,12 +8,13 @@ import hatSmile2 from "../assets/profileImages/hatSmile2.jpg";
 import content from "../content/AboutMeContent";
 import EventTracker from "../EventTracker";
 
-export const AboutMe = () => {
+export const AboutMe = ({isMobile}) => {
     const tracker = EventTracker("About Me");
     const [imageClick, setImageClick] = useState(0);
 
     useEffect(() => {
         tracker("about me page");
+        console.log("loading about me");
     },[]);
 
     const profileImages = [
@@ -24,15 +25,49 @@ export const AboutMe = () => {
         side
     ];
 
-    return <Paper
+    const Mobile = () => <Paper
+        elevation={7}
+        sx={{
+            width: "100vw",
+            margin: "auto",
+            padding: "5vh 5vw",
+            overflowY: "auto"
+        }}
+    >
+        <img 
+            src={profileImages[imageClick]} 
+            style={{
+                width: "100vw",
+                borderRadius: "50%",
+                boxShadow: "10px 10px 15px gray",
+                marginLeft: 0,
+                marginTop: 0
+            }}
+            onClick={() => setImageClick((imageClick + 1)%profileImages.length)}
+        />
+        <Paper
+            sx={{padding: "2vw"}}
+        >
+            {
+                content && content.map((c,i) => (
+                    <div key={i}>{c}<br/></div>
+                ))
+            }
+        </Paper>
+    </Paper>;
+
+    const Desktop = () => <Paper
         elevation={7}
         sx={{
             width: "50vw",
             margin: "auto",
-            padding: "5vh 5vw"
+            padding: "5vh 5vw",
+            overflowY: "auto"
         }}
     >
-        <Grid2 size={12} container
+        <Grid2 
+            size={12} 
+            container
             sx={{display: "flex", flexDirection: "row", textWrap: "pretty"}}
         >
             <Tooltip 
@@ -77,6 +112,14 @@ export const AboutMe = () => {
             ))
         }
     </Paper>
+
+    return <Box>
+        {
+            isMobile ?
+            <Mobile /> :
+            <Desktop /> 
+        }
+    </Box>;
 }
 
 export default AboutMe;
