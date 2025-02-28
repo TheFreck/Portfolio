@@ -99,7 +99,7 @@ export const Layout = () => {
                         <Typography
                             sx={{
                                 cursor: "pointer",
-                                fontSize: isMobile ? (view === viewEnum.home ? "6vw" : "3vw") : "10vw",
+                                fontSize: isMobile ? (view === viewEnum.home ? "6vw" : "3vw") : "1vw",
                             }}
                             onClick={() => setView(viewEnum.home)}
                         >
@@ -110,7 +110,7 @@ export const Layout = () => {
                         <Typography
                             sx={{
                                 cursor: "pointer",
-                                fontSize: isMobile ? (view === viewEnum.about ? "6vw" : "3vw") : "10vw"
+                                fontSize: isMobile ? (view === viewEnum.about ? "6vw" : "3vw") : "1vw"
                             }}
                             onClick={() => setView(viewEnum.about)}
                         >
@@ -121,7 +121,7 @@ export const Layout = () => {
                         <Typography
                             sx={{
                                 cursor: "pointer",
-                                fontSize: isMobile ? (view === viewEnum.projects ? "6vw" : "3vw") : "10vw"
+                                fontSize: isMobile ? (view === viewEnum.projects ? "6vw" : "3vw") : "1vw"
                             }}
                             onClick={() => setView(viewEnum.projects)}
                         >
@@ -132,7 +132,7 @@ export const Layout = () => {
                         <Typography
                             sx={{
                                 cursor: "pointer",
-                                fontSize: isMobile ? (view === viewEnum.books ? "6vw" : "3vw") : "10vw"
+                                fontSize: isMobile ? (view === viewEnum.books ? "6vw" : "3vw") : "1vw"
                             }}
                             onClick={() => setView(viewEnum.books)}
                         >
@@ -143,7 +143,7 @@ export const Layout = () => {
                         <Typography
                             sx={{
                                 cursor: "pointer",
-                                fontSize: isMobile ? (view === viewEnum.endorsements ? "6vw" : "3vw") : "10vw"
+                                fontSize: isMobile ? (view === viewEnum.endorsements ? "6vw" : "3vw") : "1vw"
                             }}
                             onClick={() => setView(viewEnum.endorsements)}
                         >
