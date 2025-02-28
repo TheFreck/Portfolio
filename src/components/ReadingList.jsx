@@ -24,7 +24,7 @@ export const ReadingList = ({isMobile}) => {
             paddingRight: 0,
             overflowY: "auto",
             height: "100vh",
-            paddingBottom: "10vh"
+            paddingBottom: "20vh"
         }}
     >
         <Box>
@@ -141,7 +141,11 @@ export const ReadingList = ({isMobile}) => {
         </Box>
         <Box>
             <Typography
-                sx={{color: "black"}}
+                sx={{
+                    color: "black", 
+                    background: "white",
+                    padding: "1vh 5vw"
+                }}
             >
                 * This page is far from finished. I will continue to add new titles as I read them and will add my reviews as time permits.
             </Typography>
