@@ -24,7 +24,7 @@ export const ReadingList = ({isMobile}) => {
             paddingRight: 0,
             overflowY: "auto",
             height: "100vh",
-            paddingBottom: "20vh"
+            paddingBottom: "50vh"
         }}
     >
         <Box>
