@@ -5,15 +5,18 @@ import EventTracker from "../EventTracker";
 
 export const ReadingList = ({isMobile}) => {
     const tracker = EventTracker("reading list page");
-    const [expanded,setExpanded] = useState("default");
+    const [expanded,setExpanded] = useState(-1);
     
 
     useEffect(() => {
-        tracker("view reading list");
+        tracker("view page", "reading list");
     },[]);
 
     useEffect(() => {
         document.getElementById(expanded)?.scrollIntoView();
+        if(expanded !== -1){
+            tracker("view book",nonFiction[expanded]);
+        }
     },[expanded]);
 
     const Mobile = () => <Container
@@ -36,8 +39,8 @@ export const ReadingList = ({isMobile}) => {
                         sx={{
                             marginBottom: "1vh"
                         }}
-                        expanded={expanded === `panel${i}`}
-                        onChange={() => expanded !== `panel${i}` ? setExpanded(`panel${i}`) : setExpanded("default")}
+                        expanded={expanded === i}
+                        onChange={() => expanded !== i ? setExpanded(i) : setExpanded(-1)}
                     >
                         <AccordionSummary>
                             <Typography
@@ -102,18 +105,18 @@ export const ReadingList = ({isMobile}) => {
                         sx={{
                             marginBottom: "1vh",
                         }}
-                        expanded={expanded === `panel${i}`}
-                        onChange={() => expanded !== `panel${i}` ? setExpanded(`panel${i}`) : setExpanded("default")}
+                        expanded={expanded === i}
+                        onChange={() => expanded !== i ? setExpanded(i) : setExpanded(-1)}
                     >
                         <AccordionSummary
-                            id={`panel${i}`}
+                            id={i}
                         >
                             <Typography
                                 sx={{
                                     marginLeft: "1vw",
                                     lineHeight: 1,
                                 }}
-                                variant={expanded === `panel${i}` ? "h6" : ""}
+                                variant={expanded === i ? "h6" : ""}
                             >
                                 {e.title} - {e.author}
                             </Typography>

@@ -2,19 +2,21 @@ import { Accordion, AccordionDetails, AccordionSummary, Box, Container, Paper, T
 import react, { useCallback, useEffect, useState } from "react";
 import endorsements from "../content/EndorsementContent";
 import EventTracker from "../EventTracker";
-import { exp } from "three/tsl";
 
 export const Endorsements = ({isMobile}) => {
     const tracker = EventTracker("endorsements page");
-    const [expanded,setExpanded] = useState("default");
-    const [screenWidth,setScreenWidth] = useState(window.innerWidth);
+    const [expanded,setExpanded] = useState(-1);
 
     useEffect(() => {
-        tracker("view endorsements");
+        tracker("view page","endorsements");
     },[]);
     
     useEffect(() => {
         document.getElementById(expanded)?.scrollIntoView();
+        console.log("expanded: ", expanded);
+        if(expanded !== -1){
+            tracker("view endorsement,",endorsements[expanded].summary.props.children[0].props.children);
+        }
     },[expanded]);
 
     const Mobile = () => <Container
@@ -36,8 +38,8 @@ export const Endorsements = ({isMobile}) => {
                     sx={{
                             marginBottom: "1vh"
                     }}
-                    expanded={expanded === `panel${i}`}
-                    onChange={() => expanded !== `panel${i}` ? setExpanded(`panel${i}`) : setExpanded("default")}
+                    expanded={expanded === i}
+                    onChange={() => expanded !== i ? setExpanded(i) : setExpanded(-1)}
                 >
                     <AccordionSummary>
                         {e.summary}
@@ -80,20 +82,18 @@ export const Endorsements = ({isMobile}) => {
                     sx={{
                         marginBottom: "1vh"
                     }}
-                    expanded={expanded === `panel${i}`}
+                    expanded={expanded === i}
                     onChange={() => {
-                        if(expanded !== `panel${i}`){
-                            setExpanded(`panel${i}`);
-                            console.log("expanded");
+                        if(expanded !== i){
+                            setExpanded(i);
                         }
                         else{
-                            setExpanded("default")
-                            console.log("expanded");
+                            setExpanded(-1);
                         }
                     }}
                 >
                     <AccordionSummary
-                        id={`panel${i}`}
+                        id={i}
                     >
                         {e.summary}
                     </AccordionSummary>

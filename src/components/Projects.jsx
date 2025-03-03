@@ -14,7 +14,7 @@ export const Projects = ({ isMobile }) => {
     const modalRef = useRef();
 
     useEffect(() => {
-        tracker("projects page");
+        tracker("view page", "projects");
     }, []);
 
     const Mobile = () => <Container
@@ -48,13 +48,13 @@ export const Projects = ({ isMobile }) => {
                             onClick={() => {
                                 setCurrent(p.project.link)
                                 setOpen(true);
-                                tracker(`read about project ${p.project.title}`);
+                                tracker("read about project",p.project.title);
                             }}
                         />
                         <Link
                             href={p.project.repo}
                             target="_blank"
-                            onClick={() => tracker(`go to repo ${p.project.title}`)}
+                            onClick={() => tracker("go to repo", p.project.title)}
                         >
                             <ImageListItemBar
                                 title={<h2>{p.title}</h2>}
@@ -143,13 +143,13 @@ export const Projects = ({ isMobile }) => {
                             onClick={() => {
                                 setCurrent(p.project.link)
                                 setOpen(true);
-                                tracker(`read about project ${p.project.title}`);
+                                tracker("read about project",p.project.title);
                             }}
                         />
                         <Link
                             href={p.project.repo}
                             target="_blank"
-                            onClick={() => tracker(`go to repo ${p.project.title}`)}
+                            onClick={() => tracker("go to repo", p.project.title)}
                         >
                             <ImageListItemBar
                                 title={p.title}

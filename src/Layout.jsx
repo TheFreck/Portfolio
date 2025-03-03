@@ -6,6 +6,7 @@ import Projects from "./components/Projects";
 import ReadingList from "./components/ReadingList";
 import Endorsements from "./components/Endorsements";
 import AboutThree from "./components/AboutThree";
+import EventTracker from "./EventTracker";
 
 const viewEnum = {
     home: 0,
@@ -16,6 +17,7 @@ const viewEnum = {
 }
 
 export const Layout = () => {
+    const tracker = EventTracker("layout");
     const [view, setView] = useState(viewEnum.about);
     const [isMobile, setIsMobile] = useState(true);
     const minSwipeDistance = 100;
@@ -26,20 +28,33 @@ export const Layout = () => {
             touchStart: null,
             touchEnd: null
         };
-        if(navigator.maxTouchPoints > 0) setIsMobile(true);
-        else setIsMobile(false);
+        if(navigator.maxTouchPoints > 0) {
+            setIsMobile(true);
+            tracker("device", "mobile");
+        }
+        else {
+            setIsMobile(false);
+            tracker("device", "desktop");
+        }
     }, []);
 
+    useEffect(() =>{
+        tracker(`${isMobile ? "swipe" : "navigate"} to page`,Object.keys(viewEnum)[view]);
+    },[view]);
+
     const onTouchStart = (e) => {
+        if(view === viewEnum.home) return;
         touchRef.current.touchStart = e.targetTouches[0].clientX;
         touchRef.current.touchEnd = null;
     }
 
     const onTouchMove = (e) => {
+        if(view === viewEnum.home) return;
         touchRef.current.touchEnd = e.targetTouches[0].clientX;
     }
 
     const onTouchEnd = (e) => {
+        if(view === viewEnum.home) return;
         if (view === 0) return;
         if (!touchRef.current.touchStart || !touchRef.current.touchEnd) return;
         const distance = touchRef.current.touchEnd - touchRef.current.touchStart;

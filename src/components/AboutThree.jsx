@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import HomeMadeBox from "./HomeMadeBox";
 import EventTracker from "../EventTracker";
 import { Box } from "@mui/material";
+import ThreePanels from "./ThreePanels";
 
 export const AboutThree = ({setView,viewEnum,isMobile}) => {
     const tracker = EventTracker("AboutThree page");
@@ -42,7 +43,8 @@ export const AboutThree = ({setView,viewEnum,isMobile}) => {
     const Desktop = () => <>
       <div id="canvas-container"
         style={{
-          background: "black"
+          background: "yellow",
+          border: "solid"
         }}
       >
         <Canvas
@@ -55,7 +57,8 @@ export const AboutThree = ({setView,viewEnum,isMobile}) => {
                 enableZoom={false}
                 autoRotate={true}
             />
-            <HomeMadeBox setView={setView} viewEnum={viewEnum} isMobile={false} />
+            {/* <HomeMadeBox setView={setView} viewEnum={viewEnum} isMobile={false} /> */}
+            <ThreePanels />
         </Canvas>
       </div>
     </>;
