@@ -9,11 +9,10 @@ import AboutThree from "./components/AboutThree";
 import EventTracker from "./EventTracker";
 
 const viewEnum = {
-    home: 0,
-    about: 1,
-    projects: 2,
-    books: 3,
-    endorsements: 4
+    about: 0,
+    projects: 1,
+    books: 2,
+    endorsements: 3
 }
 
 export const Layout = () => {
@@ -43,28 +42,26 @@ export const Layout = () => {
     },[view]);
 
     const onTouchStart = (e) => {
-        if(view === viewEnum.home) return;
         touchRef.current.touchStart = e.targetTouches[0].clientX;
         touchRef.current.touchEnd = null;
+        console.log("touch start");
     }
 
     const onTouchMove = (e) => {
-        if(view === viewEnum.home) return;
         touchRef.current.touchEnd = e.targetTouches[0].clientX;
     }
 
     const onTouchEnd = (e) => {
-        if(view === viewEnum.home) return;
-        if (view === 0) return;
         if (!touchRef.current.touchStart || !touchRef.current.touchEnd) return;
         const distance = touchRef.current.touchEnd - touchRef.current.touchStart;
         if (distance > minSwipeDistance) {
-            setView(((view + 5) - 1) % 5)
+            setView(((view + 4) - 1) % 4)
         }
         else
-            if (distance < -minSwipeDistance) {
-                setView((view + 1) % 5);
-            }
+        if (distance < -minSwipeDistance) {
+            setView((view + 1) % 4);
+        }
+        console.log("touch end");
     }
 
     const LayoutCallback = useCallback(() => <Box
@@ -111,21 +108,7 @@ export const Layout = () => {
                 >
                     {
                         !isMobile &&
-                        <Grid2 size={1.5}/>
-                    }
-                    {
-                        (!isMobile || (isMobile && view === viewEnum.home)) &&
-                        <Grid2 size={isMobile ? 12 : 2}>
-                            <Typography
-                                sx={{
-                                    cursor: "pointer",
-                                    fontSize: isMobile ? (view === viewEnum.home ? "8vw" : "3vw") : "1vw",
-                                }}
-                                onClick={() => !isMobile ? setView(viewEnum.home) : ""}
-                            >
-                                Home
-                            </Typography>
-                        </Grid2>
+                        <Grid2 size={2.5}/>
                     }
                     {
                         (!isMobile || (isMobile && view === viewEnum.about)) &&
@@ -184,11 +167,7 @@ export const Layout = () => {
                         </Grid2>
                     }
                 </Grid2>
-            </Toolbar>
-            {
-                view === viewEnum.home &&
-                <AboutThree setView={setView} viewEnum={viewEnum} isMobile={isMobile} />
-            }{
+            </Toolbar>{
                 view === viewEnum.about &&
                 <AboutMe isMobile={isMobile} />
             }
