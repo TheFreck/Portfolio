@@ -5,9 +5,9 @@ import { useEffect } from "react";
 export const SolarSystem = () => {
     const tracker = EventTracker("interface for SolarSystem");
     useEffect(() => {
-        tracker("description for SolarSystem");
+        tracker("description","SolarSystem");
     },[]);
-    const LinkTo = () => <a href="https://thefreck.github.io/SolarSystem/" target="_blank" onClick={() => tracker("visit project SolarSystem")}>Solar System Simulator</a>;
+    const LinkTo = () => <a href="https://thefreck.github.io/SolarSystem/" target="_blank" onClick={() => tracker("visit project","SolarSystem")}>Solar System Simulator</a>;
 
     return <Paper 
         sx={{

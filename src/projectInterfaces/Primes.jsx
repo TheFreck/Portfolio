@@ -5,19 +5,22 @@ import { v4 as uuid } from "uuid";
 import EventTracker from "../EventTracker";
 
 export const Primes = () => {
-    const visitId = uuid();
-    const tracker = EventTracker(`interface for Primes page visit id: ${visitId}`);
+    const tracker = EventTracker("interface Primes");
     const [low,setLow] = useState(0);
     const [qty,setQty] = useState(0);
     const [primes,setPrimes] = useState([]);
     const [primesArray, setPrimesArray] = useState([]);
     const [orderVertical,setOrderVertical] = useState(true);
+    const [visitId,setVisitId] = useState("");
+
     useEffect(() => {
-        tracker(`description for Primes visit id: ${visitId}`);
+        let id = uuid();
+        setVisitId(id);
+        tracker("description",`Primes visit id: ${id}`);
     },[]);
     
     const getPrimes = async () => {
-        tracker(`get primes low: ${low}, qty: ${qty}, ${orderVertical ? "vertical" : "horizontal"} visit id: ${visitId}`);
+        tracker(`get primes low: ${low}, qty: ${qty}, ${orderVertical ? "vertical" : "horizontal"}`,`visit id: ${visitId}`);
         axios.get(`https://primestreaming.azurewebsites.net/Primes/${low}/${qty}`)
         .then(yup => {
             setPrimes(yup.data);

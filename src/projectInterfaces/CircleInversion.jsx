@@ -10,9 +10,9 @@ const inverted = <img src={invertedLine} />;
 export const CircleInversion = () => {
     const tracker = EventTracker("interface CircleInversion");
     useEffect(() => {
-        tracker("description for CircleInversion");
+        tracker("description","CircleInversion");
     })
-    const LinkTo = () => <a href="https://thefreck.github.io/Circle_Inversion/" target="_blank" onClick={() => tracker("visit project CircleInversions")}>Circle Inversion</a>;
+    const LinkTo = () => <a href="https://thefreck.github.io/Circle_Inversion/" target="_blank" onClick={() => tracker("visit project","CircleInversions")}>Circle Inversion</a>;
 
     return (
         <Paper

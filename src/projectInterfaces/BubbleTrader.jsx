@@ -5,10 +5,10 @@ import { useEffect } from "react";
 export const BubbleTrader = () => {
     const tracker = EventTracker("interface BubbleTrader");
     useEffect(() => {
-        tracker("description for BubbleTrader");
+        tracker("description","BubbleTrader");
     },[]);
 
-    const LinkTo = () => <a href="https://bubbletraderserver20250122211424.azurewebsites.net/" target="_blank" onClick={tracker("visit project BubbleTrader")}>Bubble Trader</a>;
+    const LinkTo = () => <a href="https://bubbletraderserver20250122211424.azurewebsites.net/" target="_blank" onClick={tracker("visit project","BubbleTrader")}>Bubble Trader</a>;
 
     return <Paper
         sx={{

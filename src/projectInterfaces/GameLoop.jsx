@@ -5,10 +5,10 @@ import { useEffect } from "react";
 export const GameLoop = () => {
     const tracker = EventTracker("interface GameLoop");
     useEffect(() => {
-        tracker("description for GameLoop");
+        tracker("description","GameLoop");
     },[]);
     const LinkTo = () => <a href="https://reactgameloopserver20250114154525.azurewebsites.net/" target="_blank" onClick={() => {
-        tracker("visit project GameLoop");
+        tracker("visit project","GameLoop");
     }}>game loop</a>;
 
     return <Paper

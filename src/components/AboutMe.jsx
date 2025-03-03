@@ -13,7 +13,7 @@ export const AboutMe = ({isMobile}) => {
     const [imageClick, setImageClick] = useState(0);
 
     useEffect(() => {
-        tracker("about me page");
+        tracker("view page","about me");
     },[]);
 
     const profileImages = [

@@ -44,7 +44,6 @@ export const Layout = () => {
     const onTouchStart = (e) => {
         touchRef.current.touchStart = e.targetTouches[0].clientX;
         touchRef.current.touchEnd = null;
-        console.log("touch start");
     }
 
     const onTouchMove = (e) => {
@@ -61,7 +60,6 @@ export const Layout = () => {
         if (distance < -minSwipeDistance) {
             setView((view + 1) % 4);
         }
-        console.log("touch end");
     }
 
     const LayoutCallback = useCallback(() => <Box
