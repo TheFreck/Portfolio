@@ -16,7 +16,6 @@ const App = () => {
     ReactGA.initialize('G-C5DVXGTRT8D');
     ReactGA.send({hitType: "pageview", page: "/landingpage", title: "Landing Page"});
     const tracker = EventTracker("landing");
-    console.log("touchponits: ", navigator.maxTouchPoints);
     mobileRef.current = {
       isMobile: navigator.maxTouchPoints > 0
     }
@@ -36,6 +35,7 @@ const App = () => {
             <Route path="/Portfolio/ReadingList" element={<ReadingList isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/Projects" element={<Projects isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/" element={<AboutMe isMobile={mobileRef?.current?.isMobile} />} />
+            <Route path="/" element={<AboutMe isMobile={mobileRef?.current?.isMobile} />} />
           </Routes>
         </Layout>
       }

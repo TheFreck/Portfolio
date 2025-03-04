@@ -1,5 +1,5 @@
 import { Box, Container, Grid2, IconButton, ImageList, ImageListItem, ImageListItemBar, Link, Modal, } from "@mui/material";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Primes from "../projectInterfaces/Primes";
 import CloseIcon from '@mui/icons-material/Close';
 import projects from "../content/ProjectsContent";
@@ -12,7 +12,7 @@ export const Projects = ({ isMobile }) => {
     const [current, setCurrent] = useState(<Primes />);
     const modalRef = useRef();
 
-    useEffect(() => {
+    useEffects(() => {
         tracker("view page", "projects");
     }, []);
 

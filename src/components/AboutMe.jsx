@@ -14,7 +14,6 @@ export const AboutMe = ({isMobile}) => {
 
     useEffect(() => {
         tracker("view page","about me");
-        console.log("about isMobile: ", isMobile);
     },[]);
 
     const profileImages = [

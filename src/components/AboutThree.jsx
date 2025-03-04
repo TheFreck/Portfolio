@@ -17,7 +17,6 @@ export const AboutThree = ({setView,viewEnum,isMobile}) => {
 
     useEffect(() =>{
       tracker("view AboutThree");
-      console.log("loading about three");
     },[]);
 
     const Mobile = () => <>
