@@ -12,7 +12,7 @@ export const Projects = ({ isMobile }) => {
     const [current, setCurrent] = useState(<Primes />);
     const modalRef = useRef();
 
-    useEffects(() => {
+    useEffect(() => {
         tracker("view page", "projects");
     }, []);
 
