@@ -6,7 +6,7 @@ import { useEffect } from "react";
 export const X5wP = () => {
     const tracker = EventTracker("interface for X5wP");
     useEffect(() => {
-        tracker("descriptino for X5wP");
+        tracker("description","X5wP");
     },[]);
     
     return (
