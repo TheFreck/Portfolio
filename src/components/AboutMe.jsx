@@ -1,5 +1,5 @@
-import { Box, Container, Grid2, Paper, Tooltip, Typography } from "@mui/material";
-import react, { useCallback, useEffect, useRef, useState } from "react";
+import { Box, Container, Grid2, Paper, Tooltip } from "@mui/material";
+import { useEffect, useState } from "react";
 import side from "../assets/profileImages/side.jpg";
 import hatTip from "../assets/profileImages/hatTip.jpg";
 import bigSmile from "../assets/profileImages/bigSmile.jpg";
@@ -14,6 +14,7 @@ export const AboutMe = ({isMobile}) => {
 
     useEffect(() => {
         tracker("view page","about me");
+        console.log("about isMobile: ", isMobile);
     },[]);
 
     const profileImages = [
@@ -43,7 +44,7 @@ export const AboutMe = ({isMobile}) => {
                     margin: "2.5vw",
                     marginTop: "0",
                 }}
-                onClick={() => !mobile ? setImageClick((imageClick + 1)%profileImages.length) : ""}
+                onClick={() => !isMobile ? setImageClick((imageClick + 1)%profileImages.length) : ""}
             />
             <Paper
                 sx={{

@@ -1,4 +1,4 @@
-import { Box, Paper, Typography } from "@mui/material"
+import { Paper, Typography } from "@mui/material"
 import EventTracker from "../EventTracker";
 import { useEffect } from "react";
 

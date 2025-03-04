@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Layout from './Layout'
 import ReactGA from 'react-ga4';
-import { BrowserRouter, Route, Routes, useNavigate } from 'react-router';
+import { BrowserRouter, Route, Routes } from 'react-router';
 import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
 import ReadingList from './components/ReadingList';
@@ -9,33 +9,36 @@ import Endorsements from './components/Endorsements';
 import EventTracker from './EventTracker';
 
 const App = () => {
-  const [isMobile, setIsMobile] = useState(true);
+  const mobileRef = useRef();
+  const [ready,setReady] = useState(false);
 
   useEffect(() => {
     ReactGA.initialize('G-C5DVXGTRT8D');
     ReactGA.send({hitType: "pageview", page: "/landingpage", title: "Landing Page"});
     const tracker = EventTracker("landing");
-    if (navigator.maxTouchPoints > 0) {
-        setIsMobile(true);
-        tracker("device", "mobile");
+    console.log("touchponits: ", navigator.maxTouchPoints);
+    mobileRef.current = {
+      isMobile: navigator.maxTouchPoints > 0
     }
-    else {
-        setIsMobile(false);
-        tracker("device", "desktop");
-    }
+    setReady(true);
   },[]);
 
   return (
     <>
       <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/Portfolio/Endorsements" element={<Endorsements isMobile={isMobile} />} />
-          <Route path="/Portfolio/ReadingList" element={<ReadingList isMobile={isMobile} />} />
-          <Route path="/Portfolio/Projects" element={<Projects isMobile={isMobile} />} />
-          <Route path="/Portfolio/" element={<AboutMe isMobile={isMobile} />} />
-        </Routes>
-      </Layout>
+      {
+        ready &&
+        <Layout
+          isMobile={mobileRef?.current?.isMobile}
+        >
+          <Routes>
+            <Route path="/Portfolio/Endorsements" element={<Endorsements isMobile={mobileRef?.current?.isMobile} />} />
+            <Route path="/Portfolio/ReadingList" element={<ReadingList isMobile={mobileRef?.current?.isMobile} />} />
+            <Route path="/Portfolio/Projects" element={<Projects isMobile={mobileRef?.current?.isMobile} />} />
+            <Route path="/Portfolio/" element={<AboutMe isMobile={mobileRef?.current?.isMobile} />} />
+          </Routes>
+        </Layout>
+      }
       </BrowserRouter>
     </>
   )

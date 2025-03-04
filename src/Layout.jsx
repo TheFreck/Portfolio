@@ -1,12 +1,6 @@
-import { AppBar, Box, Grid2, Paper, Toolbar, Typography } from "@mui/material";
-import react, { useCallback, useEffect, useRef, useState } from "react";
+import { AppBar, Box, Grid2, Toolbar, Typography } from "@mui/material";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { NavLink, useNavigate } from "react-router";
-import Home from "./components/Home";
-import AboutMe from "./components/AboutMe";
-import Projects from "./components/Projects";
-import ReadingList from "./components/ReadingList";
-import Endorsements from "./components/Endorsements";
-import AboutThree from "./components/AboutThree";
 import EventTracker from "./EventTracker";
 
 const viewEnum = {
@@ -24,13 +18,13 @@ const routes = [
 ];
 
 export const Layout = (props) => {
+    const {isMobile} = props;
     const tracker = EventTracker("layout");
     const [view, setView] = useState(viewEnum.about);
-    const [isMobile, setIsMobile] = useState(true);
     const navigate = useNavigate();
     
     useEffect(() => {
-        tracker(`${isMobile ? "swipe" : "navigate"} to page`, Object.keys(viewEnum)[view]);
+        tracker(`${isMobile ? "swipe" : "navigate"} to page`, routes[view]);
         navigate(routes[view]);
     }, [view]);
     

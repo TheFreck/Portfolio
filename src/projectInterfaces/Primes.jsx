@@ -1,4 +1,4 @@
-import { Button, FormControl, FormControlLabel, Grid2, Paper, Switch, TextField, Typography } from "@mui/material";
+import { Button, Grid2, Paper, Switch, TextField, Typography } from "@mui/material";
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { v4 as uuid } from "uuid";

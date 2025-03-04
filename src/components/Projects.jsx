@@ -1,5 +1,5 @@
-import { Box, Button, Container, Grid2, IconButton, ImageList, ImageListItem, ImageListItemBar, Link, Modal, Paper, Tooltip } from "@mui/material";
-import react, { useCallback, useEffect, useRef, useState } from "react";
+import { Box, Container, Grid2, IconButton, ImageList, ImageListItem, ImageListItemBar, Link, Modal, } from "@mui/material";
+import { useRef, useState } from "react";
 import Primes from "../projectInterfaces/Primes";
 import CloseIcon from '@mui/icons-material/Close';
 import projects from "../content/ProjectsContent";
@@ -10,7 +10,6 @@ export const Projects = ({ isMobile }) => {
     const tracker = EventTracker("Projects");
     const [open, setOpen] = useState(false);
     const [current, setCurrent] = useState(<Primes />);
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     const modalRef = useRef();
 
     useEffect(() => {
