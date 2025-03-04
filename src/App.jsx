@@ -19,6 +19,8 @@ const App = () => {
     mobileRef.current = {
       isMobile: navigator.maxTouchPoints > 0
     }
+    if(mobileRef.current.isMobile) tracker("device","mobile");
+    else tracker("device","desktop");
     setReady(true);
   },[]);
 
@@ -31,11 +33,11 @@ const App = () => {
           isMobile={mobileRef?.current?.isMobile}
         >
           <Routes>
+            <Route exact path="/" element={<AboutMe isMobile={mobileRef?.current?.isMobile} />} />
+            <Route exact path="/Portfolio/" element={<AboutMe isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/Endorsements" element={<Endorsements isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/ReadingList" element={<ReadingList isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/Projects" element={<Projects isMobile={mobileRef?.current?.isMobile} />} />
-            <Route path="/Portfolio/" element={<AboutMe isMobile={mobileRef?.current?.isMobile} />} />
-            <Route path="/" element={<AboutMe isMobile={mobileRef?.current?.isMobile} />} />
           </Routes>
         </Layout>
       }

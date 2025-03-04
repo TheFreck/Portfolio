@@ -112,6 +112,7 @@ export const Layout = (props) => {
                                     <Typography
                                         sx={{
                                             cursor: "pointer",
+                                            color: "#303030",
                                             fontSize: isMobile ? (view === viewEnum.about ? "8vw" : "3vw") : "1vw"
                                         }}
                                     >
@@ -127,6 +128,7 @@ export const Layout = (props) => {
                                     <Typography
                                         sx={{
                                             cursor: "pointer",
+                                            color: "#303030",
                                             fontSize: isMobile ? (view === viewEnum.projects ? "8vw" : "3vw") : "1vw"
                                         }}
                                     >
@@ -142,6 +144,7 @@ export const Layout = (props) => {
                                     <Typography
                                         sx={{
                                             cursor: "pointer",
+                                            color: "#303030",
                                             fontSize: isMobile ? (view === viewEnum.books ? "8vw" : "3vw") : "1vw"
                                         }}
                                     >
@@ -157,6 +160,7 @@ export const Layout = (props) => {
                                     <Typography
                                         sx={{
                                             cursor: "pointer",
+                                            color: "#303030",
                                             fontSize: isMobile ? (view === viewEnum.endorsements ? "8vw" : "3vw") : "1vw"
                                         }}
                                     >
