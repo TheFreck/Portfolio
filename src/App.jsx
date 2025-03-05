@@ -38,7 +38,6 @@ const App = () => {
             <Route path="/Portfolio/Endorsements" element={<Endorsements isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/ReadingList" element={<ReadingList isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/Projects" element={<Projects isMobile={mobileRef?.current?.isMobile} />} />
-            <Route component={<AboutMe isMobile={mobileRef?.current?.isMobile} />} />
           </Routes>
         </Layout>
       }
