@@ -13,10 +13,6 @@ const App = (props) => {
   const [ready,setReady] = useState(false);
 
   useEffect(() => {
-    if(window.location.pathname !== "/Portfolio/"){
-      window.location.pathname = "/Portfolio/";
-    }
-    console.log(window.location.pathname)
     ReactGA.initialize('G-C5DVXGTRT8D');
     ReactGA.send({hitType: "pageview", page: "/landingpage", title: "Landing Page"});
     const tracker = EventTracker("landing");
