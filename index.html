@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/Portfolio/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Freck</title>
-    <script type="module" crossorigin src="/Portfolio/assets/index-DeLjjVXQ.js"></script>
+    <script type="module" crossorigin src="/Portfolio/assets/index-C8r3QOVu.js"></script>
     <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-BimyjuoX.css">
   </head><!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5DVXGTRT8"></script>
@@ -15,6 +15,18 @@
     gtag('js', new Date());
   
     gtag('config', 'G-C5DVXGTRT8');
+  </script>
+  <script>
+    (function(l) {
+    if (l.search[1] === '/' ) {
+      var decoded = l.search.slice(1).split('&').map(function(s) { 
+        return s.replace(/~and~/g, '&')
+      }).join('?');
+      window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+      );
+    }
+  }(window.location))
   </script>
   <body>
     <div id="root"></div>
