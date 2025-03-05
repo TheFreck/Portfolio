@@ -33,7 +33,7 @@ const App = () => {
           isMobile={mobileRef?.current?.isMobile}
         >
           <Routes>
-            <Route exact path="/" element={<AboutMe isMobile={mobileRef?.current?.isMobile} />} />
+            <Route path="/" element={<AboutMe isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/" element={<AboutMe isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/Endorsements" element={<Endorsements isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/ReadingList" element={<ReadingList isMobile={mobileRef?.current?.isMobile} />} />
