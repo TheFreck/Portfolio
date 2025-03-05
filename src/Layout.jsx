@@ -28,7 +28,7 @@ export const Layout = (props) => {
         navigate(routes[view]);
     }, [view]);
     
-    const minSwipeDistance = 200;
+    const minSwipeDistance = 150;
     const touchRef = useRef();
 
     useEffect(() => {
