@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import Layout from './Layout'
 import ReactGA from 'react-ga4';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
@@ -35,7 +35,7 @@ const App = (props) => {
         >
           <Routes>
             <Route path="/Portfolio/" element={<AboutMe isMobile={mobileRef?.current?.isMobile} />} />
-            <Route path="/Portfolio/Endorsements" element={<Endorsements isMobile={mobileRef?.current?.isMobile} />} />
+            <Route path="/Portfolio/Endorsements" element={<Suspense fallback={<AboutMe isMobile={mobileRef?.current?.isMobile} />}><Endorsements isMobile={mobileRef?.current?.isMobile} /></Suspense>} />
             <Route path="/Portfolio/ReadingList" element={<ReadingList isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/Projects" element={<Projects isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/*" element={<Navigate to="/Portfolio/" replace />} />
