@@ -26,7 +26,9 @@ const App = () => {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter
+        basename='/Portfolio/'
+      >
       {
         ready &&
         <Layout
