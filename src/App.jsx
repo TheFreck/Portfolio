@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Layout from './Layout'
 import ReactGA from 'react-ga4';
-import { HashRouter, Navigate, Route, Routes } from 'react-router';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
 import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
 import ReadingList from './components/ReadingList';
@@ -13,7 +13,10 @@ const App = (props) => {
   const [ready,setReady] = useState(false);
 
   useEffect(() => {
-    console.log("app props: ", props);
+    if(window.location.pathname !== "/Portfolio/"){
+      window.location.pathname = "/Portfolio/";
+    }
+    console.log(window.location.pathname)
     ReactGA.initialize('G-C5DVXGTRT8D');
     ReactGA.send({hitType: "pageview", page: "/landingpage", title: "Landing Page"});
     const tracker = EventTracker("landing");
@@ -27,7 +30,7 @@ const App = (props) => {
 
   return (
     <>
-      <HashRouter>
+      <BrowserRouter>
       {
         ready &&
         <Layout
@@ -42,7 +45,7 @@ const App = (props) => {
           </Routes>
         </Layout>
       }
-      </HashRouter>
+      </BrowserRouter>
     </>
   )
 }
