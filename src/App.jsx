@@ -8,11 +8,12 @@ import ReadingList from './components/ReadingList';
 import Endorsements from './components/Endorsements';
 import EventTracker from './EventTracker';
 
-const App = () => {
+const App = (props) => {
   const mobileRef = useRef();
   const [ready,setReady] = useState(false);
 
   useEffect(() => {
+    console.log("app props: ", props);
     ReactGA.initialize('G-C5DVXGTRT8D');
     ReactGA.send({hitType: "pageview", page: "/landingpage", title: "Landing Page"});
     const tracker = EventTracker("landing");
@@ -33,11 +34,11 @@ const App = () => {
           isMobile={mobileRef?.current?.isMobile}
         >
           <Routes>
-            <Route path="/" element={<AboutMe isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/" element={<AboutMe isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/Endorsements" element={<Endorsements isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/ReadingList" element={<ReadingList isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/Projects" element={<Projects isMobile={mobileRef?.current?.isMobile} />} />
+            <Route path="*" element={<AboutMe isMobile={mobileRef?.current?.isMobile} />} />
           </Routes>
         </Layout>
       }
