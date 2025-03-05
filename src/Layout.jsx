@@ -11,7 +11,7 @@ const viewEnum = {
 };
 
 const routes = [
-  "/Portfolio",
+  "/Portfolio/",
   "/Portfolio/Projects",
   "/Portfolio/ReadingList",
   "/Portfolio/Endorsements"
