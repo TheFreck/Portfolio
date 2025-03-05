@@ -28,27 +28,33 @@ export const Layout = (props) => {
         navigate(routes[view]);
     }, [view]);
     
-    const minSwipeDistance = 100;
+    const minSwipeDistance = 200;
     const touchRef = useRef();
 
     useEffect(() => {
         touchRef.current = {
-            touchStart: null,
-            touchEnd: null
+            touchStartX: null,
+            touchEndX: null,
+            touchStartY: null,
+            touchEndY: null
         };
     }, []);
     const onTouchStart = (e) => {
-        touchRef.current.touchStart = e.targetTouches[0].clientX;
-        touchRef.current.touchEnd = null;
+        touchRef.current.touchStartX = e.targetTouches[0].clientX;
+        touchRef.current.touchStartY = e.targetTouches[0].clientY;
+        touchRef.current.touchEndX = null;
+        touchRef.current.touchEndY = null;
     }
 
     const onTouchMove = (e) => {
-        touchRef.current.touchEnd = e.targetTouches[0].clientX;
+        touchRef.current.touchEndX = e.targetTouches[0].clientX;
+        touchRef.current.touchEndY = e.targetTouches[0].clientY;
     }
 
     const onTouchEnd = (e) => {
-        if (!touchRef.current.touchStart || !touchRef.current.touchEnd) return;
-        const distance = touchRef.current.touchEnd - touchRef.current.touchStart;
+        if (!touchRef.current.touchStartX || !touchRef.current.touchEndX) return;
+        if(Math.abs(touchRef.current.touchStartY-touchRef.current.touchEndY) >= minSwipeDistance) return;
+        const distance = touchRef.current.touchEndX - touchRef.current.touchStartX;
         if (distance > minSwipeDistance) {
             setView(((view + 4) - 1) % 4)
         }
