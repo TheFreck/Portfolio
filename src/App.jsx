@@ -34,11 +34,11 @@ const App = (props) => {
           isMobile={mobileRef?.current?.isMobile}
         >
           <Routes>
-            <Route path="/*" element={<AboutMe isMobile={mobileRef?.current?.isMobile} />} />
+            <Route path="/Portfolio/" element={<AboutMe isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/Endorsements" element={<Endorsements isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/ReadingList" element={<ReadingList isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/Projects" element={<Projects isMobile={mobileRef?.current?.isMobile} />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="/*" element={<Navigate to="/Portfolio/" replace />} />
           </Routes>
         </Layout>
       }
