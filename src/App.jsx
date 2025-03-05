@@ -34,7 +34,7 @@ const App = (props) => {
           isMobile={mobileRef?.current?.isMobile}
         >
           <Routes>
-            <Route redirect="/" path="*" element={<Endorsements isMobile={mobileRef?.current?.isMobile} />} />
+            <Route path="*" element={<Endorsements isMobile={mobileRef?.current?.isMobile} />} />
             {/* <Route path="/Portfolio/" element={<AboutMe isMobile={mobileRef?.current?.isMobile} />} /> */}
             <Route path="/Portfolio/Endorsements" element={<Endorsements isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/ReadingList" element={<ReadingList isMobile={mobileRef?.current?.isMobile} />} />
