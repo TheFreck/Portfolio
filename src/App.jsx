@@ -1,7 +1,7 @@
-import { Suspense, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Layout from './Layout'
 import ReactGA from 'react-ga4';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
+import { HashRouter, Navigate, Route, Routes } from 'react-router';
 import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
 import ReadingList from './components/ReadingList';
@@ -27,7 +27,7 @@ const App = (props) => {
 
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
       {
         ready &&
         <Layout
@@ -35,14 +35,14 @@ const App = (props) => {
         >
           <Routes>
             <Route path="/Portfolio/" element={<AboutMe isMobile={mobileRef?.current?.isMobile} />} />
-            <Route path="/Portfolio/Endorsements" element={<Suspense fallback={<AboutMe isMobile={mobileRef?.current?.isMobile} />}><Endorsements isMobile={mobileRef?.current?.isMobile} /></Suspense>} />
+            <Route path="/Portfolio/Endorsements" element={<Endorsements isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/ReadingList" element={<ReadingList isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/Portfolio/Projects" element={<Projects isMobile={mobileRef?.current?.isMobile} />} />
             <Route path="/*" element={<Navigate to="/Portfolio/" replace />} />
           </Routes>
         </Layout>
       }
-      </BrowserRouter>
+      </HashRouter>
     </>
   )
 }
