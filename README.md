@@ -1,4 +1,4 @@
-# [My Portfolio](https://thefreck.github.io/Portfolio/)
+# [My Portfolio](https://thefreck.me)
 This is an easy way to see and interact with projects I've worked on. I've included five sections:
 ## About Me
 This is an intro into my personality and non programming accomplishments
